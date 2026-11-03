@@ -1,0 +1,143 @@
+/* Keep the existing duplicated marquee and its gap/padding pairing so -50%
+   always lands on the next identical six-cover sequence, including on mobile. */
+.games-section .marquee {
+  padding: 12px 0;
+  margin: 0;
+}
+.games-section .marquee-track {
+  gap: 16px;
+  padding-right: 16px;
+  animation-duration: calc(60s * var(--game-loop-repeats, 1));
+}
+.games-section .marquee-reverse .marquee-track {
+  animation-duration: calc(68s * var(--game-loop-repeats, 1));
+  animation-direction: reverse;
+}
+.games-section .game-card {
+  width: 236px;
+  height: 326px;
+  justify-content: flex-start;
+  gap: 0;
+  padding: 10px;
+  border-radius: 12px;
+  background: #19171f;
+  border: 1px solid #ffffff12;
+  box-shadow: 0 8px 22px #0003;
+  transition:
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
+  overflow: visible;
+}
+.games-section .game-card:hover {
+  transform: scale(1.035);
+  box-shadow: 0 12px 28px #0005;
+  border-color: #aa97d166;
+  z-index: 1;
+}
+.game-cover-frame {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 218px;
+  flex-shrink: 0;
+  overflow: hidden;
+  border-radius: 7px;
+  background: #100e15;
+}
+.game-cover-frame picture {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.game-cover-frame img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.game-cover-missing {
+  font-size: 11px;
+  line-height: 1.7;
+  color: #bcaecc;
+  text-align: center;
+  padding: 20px;
+}
+.game-cover-caption {
+  padding: 14px 5px 5px;
+  min-width: 0;
+}
+.games-section .game-card strong {
+  display: block;
+  font-family: "DM Sans", system-ui, sans-serif;
+  font-size: 13px;
+  line-height: 1.45;
+  font-weight: 500;
+  letter-spacing: -0.015em;
+  min-height: 38px;
+  color: #f0eaf5;
+}
+.games-section .game-card small {
+  display: block;
+  font-size: 10px;
+  line-height: 1.5;
+  margin-top: 5px;
+  color: #b7a8c5;
+}
+.games-section .games-disclaimer {
+  max-width: 850px;
+  margin: 30px auto 0;
+  padding: 0 24px;
+  font-size: 11px;
+  line-height: 1.8;
+}
+@media (max-width: 600px) {
+  .games-section .game-card {
+    width: 190px;
+    height: 281px;
+    padding: 9px;
+    border-radius: 10px;
+  }
+  .game-cover-frame {
+    height: 173px;
+  }
+  .game-cover-caption {
+    padding: 12px 3px 3px;
+  }
+  .games-section .game-card strong {
+    font-size: 12px;
+    min-height: 35px;
+  }
+  .games-section .game-card small {
+    font-size: 9px;
+  }
+  .games-section .marquee-track {
+    animation-duration: calc(52s * var(--game-loop-repeats, 1));
+  }
+  .games-section .marquee-reverse .marquee-track {
+    animation-duration: calc(60s * var(--game-loop-repeats, 1));
+  }
+  .games-section .games-disclaimer {
+    font-size: 10px;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  .games-section .marquee-track {
+    animation: none;
+    transform: none;
+    will-change: auto;
+  }
+  .games-section .game-card {
+    transition: none;
+  }
+  .games-section .game-card:hover {
+    transform: none;
+  }
+  .games-section .game-card[aria-hidden="true"] {
+    display: none;
+  }
+  .games-section .marquee {
+    overflow-x: auto;
+  }
+}

@@ -1,0 +1,13 @@
+Estoy desarrollando PondNest, una tienda de ecommerce en React + Vite con estética oscura premium, intro 3D de la Gamegaga R36 HD morada controlada por scroll, sección de juegos en dos carruseles, cuatro productos y futuro checkout Shopify integrado con AutoDS.
+
+Tu tarea es implementar la web en este proyecto, no solo explicarme cómo hacerla.
+
+1. Lee todos los archivos de la carpeta `requisitos/`, empezando por `00_LEEME_PRIMERO.md` y `01_PROMPT_MAESTRO.md`.
+2. Inspecciona el código existente y el modelo `public/models/gamegaga-r36hd-detailed.glb`.
+3. Construye la home y las páginas de producto y carrito siguiendo los requisitos, aprovechando lo que ya existe y sin perder el modelo 3D.
+4. El 3D es EXCLUSIVAMENTE para la Gamegaga R36 HD morada. La R36H horizontal y los dos accesorios son productos normales.
+5. Prioriza diseño profesional, rapidez y facilidad para comprar. No inventes juegos, precios, compatibilidades, reseñas, plazos ni datos legales.
+6. Deja preparada la capa Shopify headless y el checkout, pero no finjas compras reales sin credenciales/configuración.
+7. Ejecuta las comprobaciones y arregla los errores que encuentres. Al terminar, dime qué funciona, qué está pendiente y qué archivos necesitas de mí.
+
+Puedes ir por fases, pero empieza directamente a trabajar sobre los archivos. No me hagas repetir decisiones que ya están escritas en `requisitos/`.

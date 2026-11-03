@@ -1,0 +1,131 @@
+.cookie-notice {
+  position: fixed;
+  z-index: 80;
+  bottom: 18px;
+  left: 18px;
+  width: min(520px, calc(100% - 36px));
+  padding: 22px;
+  background: #18131ff5;
+  border: 1px solid #655373;
+  border-radius: 10px;
+  box-shadow: 0 16px 50px #0008;
+  color: #eee4f6;
+  backdrop-filter: blur(14px);
+}
+.cookie-notice > strong {
+  font-size: 15px;
+  font-weight: 500;
+}
+.cookie-notice p,
+.cookie-dialog > p {
+  font-size: 12px;
+  line-height: 1.8;
+  color: #c5b8d1;
+}
+.cookie-notice a,
+.cookie-dialog a {
+  color: #e1c9f3;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.cookie-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 9px;
+  margin-top: 18px;
+}
+.cookie-actions button {
+  background: #251c30 !important;
+  color: #efe2fa;
+  border: 1px solid #8a719b;
+  border-radius: 5px;
+  padding: 11px 13px;
+  min-height: 44px;
+  font-size: 11px;
+}
+.cookie-actions button:hover {
+  background: #362442 !important;
+}
+.cookie-dialog {
+  width: min(590px, calc(100% - 30px));
+  max-height: calc(100svh - 40px);
+  padding: 30px;
+  background: #16111c;
+  border: 1px solid #655373;
+  border-radius: 12px;
+  color: #f1e8f7;
+  box-shadow: 0 30px 90px #0009;
+}
+.cookie-dialog::backdrop {
+  background: #050408bb;
+  backdrop-filter: blur(4px);
+}
+.cookie-dialog h2 {
+  font-size: 27px;
+  font-weight: 500;
+  letter-spacing: -0.04em;
+  margin: 0 0 16px;
+}
+.cookie-category {
+  display: flex;
+  gap: 14px;
+  align-items: flex-start;
+  border-top: 1px solid #44334f;
+  margin-top: 20px;
+  padding-top: 20px;
+}
+.cookie-category input {
+  accent-color: #b79bcf;
+  min-height: 22px;
+  width: 22px;
+  margin: 0;
+  flex-shrink: 0;
+}
+.cookie-category strong {
+  display: block;
+  font-size: 13px;
+  line-height: 1.6;
+  font-weight: 500;
+}
+.cookie-category small {
+  display: block;
+  font-size: 11px;
+  line-height: 1.8;
+  color: #bfb0ca;
+  margin-top: 7px;
+}
+.cookie-dialog .cookie-fine-print {
+  font-size: 10px;
+  margin-top: 22px;
+}
+.footer .cookie-preferences-link {
+  border: 0;
+  background: none;
+  padding: 0;
+  text-align: left;
+  font: inherit;
+  color: inherit;
+  cursor: pointer;
+}
+@media (max-width: 600px) {
+  .cookie-notice {
+    padding: 17px;
+    bottom: 12px;
+    left: 12px;
+    width: calc(100% - 24px);
+  }
+  .cookie-actions {
+    gap: 7px;
+  }
+  .cookie-actions button {
+    flex: 1 1 auto;
+    padding: 10px;
+    font-size: 10px;
+  }
+  .cookie-dialog {
+    padding: 23px;
+  }
+  .cookie-dialog h2 {
+    font-size: 25px;
+  }
+}

@@ -1,0 +1,57 @@
+# Dependencies and generated output
+node_modules/
+dist/
+build/
+coverage/
+.vite/
+.cache/
+
+# Environment files: keep only the empty configuration template
+.env
+.env.*
+!.env.example
+
+# Tests, screenshots and local temporary output
+test-results/
+playwright-report/
+blob-report/
+artifacts/
+tmp/
+temp/
+*.tmp
+*.temp
+*.log
+*.bak
+*.swp
+*.swo
+*~
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Local editor/OS state
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# Credentials, private keys and authentication/session exports
+.npmrc
+.netrc
+.git-credentials
+.ssh/
+.aws/
+secrets/
+credentials/
+*.pem
+*.key
+*.p12
+*.pfx
+*.keystore
+credentials.json
+service-account*.json
+storageState*.json
+storage-state*.json
+.auth/
