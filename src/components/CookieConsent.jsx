@@ -108,7 +108,7 @@ export function CookieConsentProvider({ children }) {
           <p>
             Usamos almacenamiento necesario para la tienda. TikTok y YouTube solo se
             conecta si aceptas contenido externo.{" "}
-            <a href="/cookies">Información de cookies</a>.
+            <a href={import.meta.env.MODE === "pages" ? `${import.meta.env.BASE_URL}#/cookies` : "/cookies"}>Información de cookies</a>.
           </p>
           <div className="cookie-actions">
             <button onClick={() => save(false)}>Solo necesarias</button>

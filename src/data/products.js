@@ -8,7 +8,7 @@ export const demoProducts = [
     tag: "LA PROTAGONISTA",
     category: "console",
     type: mainProduct.variantLabel,
-    image: "/productos/r36hd-demo.webp",
+    image: `${import.meta.env?.BASE_URL ?? "/"}productos/r36hd-demo.webp`,
     description:
       "El retro regresa con la R36S de 128 GB y sistema ArkOS. La variante protagonista de PondNest será la morada transparente.",
     facts: [
@@ -17,8 +17,8 @@ export const demoProducts = [
       "Sistema operativo ArkOS",
     ],
     gallery: [
-      "/productos/r36hd-demo.webp",
-      "/models/hero-poster.webp",
+      `${import.meta.env?.BASE_URL ?? "/"}productos/r36hd-demo.webp`,
+      `${import.meta.env?.BASE_URL ?? "/"}models/hero-poster.webp`,
     ],
     note: "Imagen y 3D provisionales conservados del prototipo anterior. Disposición general contrastada con el anuncio de la R36S; proporciones, interiores y conexiones no verificados. Pantalla, procesador, batería, versión exacta de ArkOS, juegos y contenido de la caja pendientes de confirmar.",
   },
@@ -28,7 +28,7 @@ export const demoProducts = [
     tag: "OTRA FORMA DE JUGAR",
     category: "console",
     type: "Formato horizontal",
-    image: "/productos/r36h-demo.webp",
+    image: `${import.meta.env?.BASE_URL ?? "/"}productos/r36h-demo.webp`,
     description:
       "Otra perspectiva del juego portátil. Explora el formato horizontal de nuestra selección.",
     facts: ["Diseño horizontal"],
@@ -40,7 +40,7 @@ export const demoProducts = [
     tag: "PROTECCIÓN",
     category: "accessory",
     type: "Compatibilidad por confirmar",
-    image: "/productos/silicona-demo.webp",
+    image: `${import.meta.env?.BASE_URL ?? "/"}productos/silicona-demo.webp`,
     description:
       "Un accesorio de protección para completar tu equipo, una vez comprobado el ajuste al modelo exacto.",
     facts: [],
@@ -52,7 +52,7 @@ export const demoProducts = [
     tag: "CONTIGO, DONDE VAYAS",
     category: "accessory",
     type: "Compatibilidad por confirmar",
-    image: "/productos/estuche-demo.webp",
+    image: `${import.meta.env?.BASE_URL ?? "/"}productos/estuche-demo.webp`,
     description:
       "Un lugar para guardar tu consola entre partidas. Medidas y ajuste pendientes de verificación.",
     facts: [],

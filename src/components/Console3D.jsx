@@ -10,7 +10,7 @@ import * as THREE from "three";
  * This file deliberately loads named GLB parts, so a faithful GLB can replace
  * the procedural approximation without redesigning the homepage/scroll code.
  */
-const MODEL_URL = "/models/gamegaga-r36hd-detailed.glb";
+const MODEL_URL = `${import.meta.env?.BASE_URL ?? "/"}models/gamegaga-r36hd-detailed.glb`;
 
 function ConsoleModel({ poseRef, onReady, onProgress }) {
   const { scene } = useLoader(GLTFLoader, MODEL_URL, undefined, (event) => {

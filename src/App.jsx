@@ -10,6 +10,7 @@ import {
 } from "react";
 import {
   BrowserRouter,
+  HashRouter,
   Link,
   Navigate,
   Route,
@@ -35,6 +36,8 @@ import {
 } from "./animation/consoleSequence.js";
 const Console3D = lazy(() => import("./components/Console3D.jsx"));
 const SetupGuide = lazy(() => import("./components/SetupGuide.jsx"));
+const SiteRouter = import.meta.env.MODE === "pages" ? HashRouter : BrowserRouter;
+
 gsap.registerPlugin(ScrollTrigger);
 
 function Brand() {
@@ -293,7 +296,7 @@ function Hero() {
           {(fixed || !ready) && (
             <img
               className="hero-poster"
-              src="/models/hero-poster.webp"
+              src={`${import.meta.env.BASE_URL}models/hero-poster.webp`}
               alt="Reconstrucción de la R36S morada transparente"
             />
           )}
@@ -983,7 +986,7 @@ function Footer() {
 }
 export default function App() {
   return (
-    <CookieConsentProvider><BrowserRouter>
+    <CookieConsentProvider><SiteRouter>
       <StoreProvider>
         <PagePosition />
         <Header />
@@ -1029,6 +1032,6 @@ export default function App() {
         </main>
         <Footer />
       </StoreProvider>
-    </BrowserRouter></CookieConsentProvider>
+    </SiteRouter></CookieConsentProvider>
   );
 }

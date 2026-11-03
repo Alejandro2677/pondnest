@@ -19,7 +19,7 @@ const normalize = (value) =>
     .replace(/[\u0300-\u036f]/g, "")
     .toLowerCase();
 const assetUrl = (file) =>
-  file.replace("/public/", "/").split("/").map(encodeURIComponent).join("/");
+  `${import.meta.env?.BASE_URL ?? "/"}${file.replace("/public/", "")}`.split("/").map(encodeURIComponent).join("/");
 
 export const games = [
   [

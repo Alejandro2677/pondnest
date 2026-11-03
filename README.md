@@ -121,3 +121,9 @@ git push origin main
 
 Revisa lo que preparas y no añadas secretos. Usa el inicio de sesión oficial de GitHub cuando sea necesario; no guardes tokens en archivos del proyecto. No se incluye una licencia comercial para las imágenes o los contenidos de terceros: conserva las comprobaciones de derechos pendientes descritas en la documentación.
 
+
+## GitHub Pages
+
+Web: https://alejandro2677.github.io/pondnest/
+
+Compilar para Pages: `npm run build -- --mode pages`. Publicar el contenido de `dist` en la rama `gh-pages` (raíz). La navegación usa hash en Pages para poder recargar las páginas sin errores 404.

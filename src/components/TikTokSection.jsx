@@ -11,10 +11,10 @@ import { useCookieConsent } from "./CookieConsent.jsx";
 import "./socialProof.css";
 
 const demoVideos = [
-  ["Una primera mirada", "R36S", "/models/hero-poster.webp"],
-  ["Pantalla y controles", "R36S", "/models/hero-poster.webp"],
-  ["Desde otro ángulo", "R36S", "/models/hero-poster.webp"],
-  ["Otra forma de jugar", "R36H", "/productos/r36h-demo.webp"],
+  ["Una primera mirada", "R36S", `${import.meta.env?.BASE_URL ?? "/"}models/hero-poster.webp`],
+  ["Pantalla y controles", "R36S", `${import.meta.env?.BASE_URL ?? "/"}models/hero-poster.webp`],
+  ["Desde otro ángulo", "R36S", `${import.meta.env?.BASE_URL ?? "/"}models/hero-poster.webp`],
+  ["Otra forma de jugar", "R36H", `${import.meta.env?.BASE_URL ?? "/"}productos/r36h-demo.webp`],
 ];
 
 function TikTokPlayer({
