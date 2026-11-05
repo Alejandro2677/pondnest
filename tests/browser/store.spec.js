@@ -1,4 +1,4 @@
-import { test, expect } from "@playwright/test";
+import { test, expect } from "../fixtures/preview-page.js";
 
 for (const width of [320, 375, 430, 768, 1440]) {
   test(`responsive and navigation ${width}`, async ({ page }) => {
@@ -33,13 +33,13 @@ for (const width of [320, 375, 430, 768, 1440]) {
     });
     await page.getByRole("link", { name: "Comprar ahora" }).click();
     await expect(page.getByRole("heading", { level: 1 })).toHaveText(
-      "R36S",
+      "R36S Retro · Consola portátil",
     );
     await page.getByLabel("Cantidad", { exact: true }).fill("2");
-    await page.getByRole("button", { name: "Añadir al carrito demo" }).click();
+    await page.getByRole("button", { name: "Añadir al carrito ↗" }).click();
     await expect(page).toHaveURL(/carrito/);
     await expect(
-      page.getByRole("button", { name: "Compra no disponible" }),
+      page.getByRole("button", { name: "Continuar al pago" }),
     ).toBeDisabled();
     await expect(page.locator("output")).toHaveText("2");
     await page.getByRole("button", { name: "Aumentar cantidad" }).click();
@@ -125,7 +125,7 @@ test("failed GLB has a static fallback", async ({ page }) => {
   await expect(page.locator(".loading")).toHaveCount(0);
   await page.getByRole("link", { name: "Comprar ahora" }).click();
   await expect(
-    page.getByRole("button", { name: "Añadir al carrito demo" }),
+    page.getByRole("button", { name: "Añadir al carrito ↗" }),
   ).toBeEnabled();
 });
 
@@ -154,7 +154,7 @@ test("all routes, gallery, FAQ, mobile menu and 404", async ({ page }) => {
   ]) {
     await page.goto(`/productos/${handle}`);
     await expect(
-      page.getByRole("button", { name: "Añadir al carrito demo" }),
+      page.getByRole("button", { name: "Añadir al carrito ↗" }),
     ).toBeEnabled();
   }
   await page.goto("/productos/r36s");

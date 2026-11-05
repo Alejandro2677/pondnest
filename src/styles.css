@@ -942,15 +942,22 @@ main:focus {
 }
 .hero-wordmark {
   position: absolute;
-  left: 39%;
-  top: 23%;
-  font-size: clamp(130px, 19vw, 300px);
-  font-weight: 700;
-  letter-spacing: -0.09em;
-  white-space: nowrap;
-  color: #ffffff05;
-  line-height: 1;
+  z-index: 0;
+  left: 72%;
+  top: 50%;
+  width: min(48vw, 680px);
+  aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  background-color: #6f507e;
+  opacity: 0.08;
+  mask-size: contain;
+  mask-position: center;
+  mask-repeat: no-repeat;
+  -webkit-mask-size: contain;
+  -webkit-mask-position: center;
+  -webkit-mask-repeat: no-repeat;
   pointer-events: none;
+  user-select: none;
 }
 .hero-copy {
   top: 31%;
@@ -1341,7 +1348,7 @@ main:focus {
   padding-top: 175px;
   min-height: 75svh;
 }
-.page h1 {
+.page h1, .packs-section.page > h2 {
   font-size: clamp(38px, 5.7vw, 80px);
   line-height: 1.05;
   letter-spacing: -0.06em;
@@ -1613,7 +1620,7 @@ input {
     gap: 14px;
   }
   .hero-wordmark {
-    top: 30%;
+    left: 73%;
   }
 }
 @media (max-width: 700px) {
@@ -1705,9 +1712,9 @@ input {
     transform: none;
   }
   .hero-wordmark {
-    left: 4%;
-    top: 58%;
-    font-size: 29vw;
+    left: 50%;
+    top: calc(50% + 145px);
+    width: min(92vw, 460px);
   }
   .hero-poster {
     width: 100%;
@@ -1833,7 +1840,7 @@ input {
   .page {
     padding-top: 150px;
   }
-  .page h1 {
+  .page h1, .packs-section.page > h2 {
     font-size: 45px;
   }
   .detail-grid {
@@ -1973,5 +1980,8 @@ input {
   .scene-3d {
     top: 335px;
     bottom: 76px;
+  }
+  .hero-wordmark {
+    top: calc(50% + 129.5px);
   }
 }

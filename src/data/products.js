@@ -1,3 +1,4 @@
+import { productImages } from "./productImages.js";
 import { mainProduct } from "./mainProduct.js";
 export const demoProducts = [
   {
@@ -58,7 +59,7 @@ export const demoProducts = [
     facts: [],
     note: "Compatibilidad con R36S y R36H por confirmar.",
   },
-].map((p) => ({
+].map((p) => productImages({
   ...p,
   demo: true,
   price: null,

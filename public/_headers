@@ -1,0 +1,8 @@
+/productos/r36s/_optimized/*
+  Cache-Control: public, max-age=31536000, immutable
+/productos/bag/_optimized/*
+  Cache-Control: public, max-age=31536000, immutable
+/productos/protector/_optimized/*
+  Cache-Control: public, max-age=31536000, immutable
+/productos/r36h/_optimized/*
+  Cache-Control: public, max-age=31536000, immutable

@@ -1,0 +1,347 @@
+{
+  "products": {
+    "r36s": {
+      "defaultVariantId": "r36s-01",
+      "dimensions": [
+        "reference"
+      ],
+      "variants": [
+        {
+          "id": "r36s-01",
+          "productId": "r36s",
+          "name": "Morado transparente · 128 GB · ArkOS",
+          "color": "Morado transparente",
+          "capacity": "128 GB",
+          "primaryImage": "morado",
+          "additionalImages": [],
+          "shopifyVariantId": "gid://shopify/ProductVariant/55284237435213",
+          "availability": "unverified",
+          "identification": "visual"
+        },
+        {
+          "id": "r36s-02",
+          "productId": "r36s",
+          "name": "Blanco",
+          "color": "Blanco",
+          "capacity": null,
+          "primaryImage": "blanco",
+          "additionalImages": [],
+          "shopifyVariantId": null,
+          "availability": "unverified",
+          "identification": "visual"
+        },
+        {
+          "id": "r36s-03",
+          "productId": "r36s",
+          "name": "Morado claro",
+          "color": "Morado claro",
+          "capacity": null,
+          "primaryImage": "moradoclaro",
+          "additionalImages": [],
+          "shopifyVariantId": null,
+          "availability": "unverified",
+          "identification": "visual"
+        },
+        {
+          "id": "r36s-04",
+          "productId": "r36s",
+          "name": "Azul",
+          "color": "Azul",
+          "capacity": null,
+          "primaryImage": "azul",
+          "additionalImages": [],
+          "shopifyVariantId": null,
+          "availability": "unverified",
+          "identification": "visual"
+        },
+        {
+          "id": "r36s-05",
+          "productId": "r36s",
+          "name": "Turquesa transparente",
+          "color": "Turquesa transparente",
+          "capacity": null,
+          "primaryImage": "azultr",
+          "additionalImages": [],
+          "shopifyVariantId": null,
+          "availability": "unverified",
+          "identification": "visual"
+        },
+        {
+          "id": "r36s-06",
+          "productId": "r36s",
+          "name": "Rojo",
+          "color": "Rojo",
+          "capacity": null,
+          "primaryImage": "rojo",
+          "additionalImages": [],
+          "shopifyVariantId": null,
+          "availability": "unverified",
+          "identification": "visual"
+        },
+        {
+          "id": "r36s-07",
+          "productId": "r36s",
+          "name": "Variante 07 · rojo transparente",
+          "color": "Rojo transparente",
+          "capacity": null,
+          "primaryImage": "rojotr",
+          "additionalImages": [],
+          "shopifyVariantId": null,
+          "availability": "unverified",
+          "identification": "pending-provider"
+        },
+        {
+          "id": "r36s-08",
+          "productId": "r36s",
+          "name": "Amarillo",
+          "color": "Amarillo",
+          "capacity": null,
+          "primaryImage": "Imagen de ChatGPT 3 nov 2026, 18_26_30-1.png",
+          "additionalImages": [],
+          "shopifyVariantId": null,
+          "availability": "unverified",
+          "identification": "visual"
+        },
+        {
+          "id": "r36s-09",
+          "productId": "r36s",
+          "name": "Turquesa",
+          "color": "Turquesa",
+          "capacity": null,
+          "primaryImage": "Imagen de ChatGPT 3 nov 2026, 18_26_43-2.png",
+          "additionalImages": [],
+          "shopifyVariantId": null,
+          "availability": "unverified",
+          "identification": "visual"
+        },
+        {
+          "id": "r36s-10",
+          "productId": "r36s",
+          "name": "Rosa",
+          "color": "Rosa",
+          "capacity": null,
+          "primaryImage": "Imagen de ChatGPT 3 nov 2026, 18_26_46-3.png",
+          "additionalImages": [],
+          "shopifyVariantId": null,
+          "availability": "unverified",
+          "identification": "visual"
+        },
+        {
+          "id": "r36s-11",
+          "productId": "r36s",
+          "name": "Azul petróleo transparente",
+          "color": "Azul petróleo transparente",
+          "capacity": null,
+          "primaryImage": "Imagen de ChatGPT 3 nov 2026, 18_26_48-4.png",
+          "additionalImages": [],
+          "shopifyVariantId": null,
+          "availability": "unverified",
+          "identification": "visual"
+        },
+        {
+          "id": "r36s-12",
+          "productId": "r36s",
+          "name": "Naranja transparente",
+          "color": "Naranja transparente",
+          "capacity": null,
+          "primaryImage": "Imagen de ChatGPT 3 nov 2026, 18_26_51-5.png",
+          "additionalImages": [],
+          "shopifyVariantId": null,
+          "availability": "unverified",
+          "identification": "visual"
+        },
+        {
+          "id": "r36s-13",
+          "productId": "r36s",
+          "name": "Variante 13 · rojo transparente",
+          "color": "Rojo transparente",
+          "capacity": null,
+          "primaryImage": "Imagen de ChatGPT 3 nov 2026, 18_26_53-6.png",
+          "additionalImages": [],
+          "shopifyVariantId": null,
+          "availability": "unverified",
+          "identification": "pending-provider"
+        }
+      ]
+    },
+    "r36h": {
+      "defaultVariantId": "r36h-purple-64",
+      "dimensions": [
+        "color",
+        "capacity"
+      ],
+      "variants": [
+        {
+          "id": "r36h-black-64",
+          "productId": "r36h",
+          "name": "Negro transparente · 64 GB",
+          "color": "Negro transparente",
+          "capacity": "64 GB",
+          "primaryImage": "negro36h",
+          "additionalImages": [],
+          "shopifyVariantId": "gid://shopify/ProductVariant/55284240974157",
+          "availability": "unverified",
+          "identification": "visual"
+        },
+        {
+          "id": "r36h-black-128",
+          "productId": "r36h",
+          "name": "Negro transparente · 128 GB",
+          "color": "Negro transparente",
+          "capacity": "128 GB",
+          "primaryImage": "negro36h",
+          "additionalImages": [],
+          "shopifyVariantId": "gid://shopify/ProductVariant/55284240941389",
+          "availability": "unverified",
+          "identification": "visual"
+        },
+        {
+          "id": "r36h-white-64",
+          "productId": "r36h",
+          "name": "Blanco · 64 GB",
+          "color": "Blanco",
+          "capacity": "64 GB",
+          "primaryImage": "blanco36h",
+          "additionalImages": [],
+          "shopifyVariantId": "gid://shopify/ProductVariant/55284241039693",
+          "availability": "unverified",
+          "identification": "visual"
+        },
+        {
+          "id": "r36h-white-128",
+          "productId": "r36h",
+          "name": "Blanco · 128 GB",
+          "color": "Blanco",
+          "capacity": "128 GB",
+          "primaryImage": "blanco36h",
+          "additionalImages": [],
+          "shopifyVariantId": "gid://shopify/ProductVariant/55284241072461",
+          "availability": "unverified",
+          "identification": "visual"
+        },
+        {
+          "id": "r36h-purple-64",
+          "productId": "r36h",
+          "name": "Morado transparente · 64 GB",
+          "color": "Morado transparente",
+          "capacity": "64 GB",
+          "primaryImage": "morado36h",
+          "additionalImages": [],
+          "shopifyVariantId": "gid://shopify/ProductVariant/55284240908621",
+          "availability": "unverified",
+          "identification": "visual"
+        },
+        {
+          "id": "r36h-purple-128",
+          "productId": "r36h",
+          "name": "Morado transparente · 128 GB",
+          "color": "Morado transparente",
+          "capacity": "128 GB",
+          "primaryImage": "morado36h",
+          "additionalImages": [],
+          "shopifyVariantId": "gid://shopify/ProductVariant/55284241137997",
+          "availability": "unverified",
+          "identification": "visual"
+        }
+      ]
+    },
+    "funda-silicona": {
+      "defaultVariantId": "protector-black",
+      "dimensions": [
+        "color"
+      ],
+      "variants": [
+        {
+          "id": "protector-black",
+          "productId": "funda-silicona",
+          "name": "Negro",
+          "color": "Negro",
+          "capacity": null,
+          "primaryImage": "negro",
+          "additionalImages": [
+            "blancop",
+            "lilap",
+            "verdep",
+            "todas"
+          ],
+          "shopifyVariantId": "gid://shopify/ProductVariant/55284372734285",
+          "availability": "unverified",
+          "identification": "visual"
+        },
+        {
+          "id": "protector-white",
+          "productId": "funda-silicona",
+          "name": "Blanco",
+          "color": "Blanco",
+          "capacity": null,
+          "primaryImage": "blancop",
+          "additionalImages": [
+            "negro",
+            "lilap",
+            "verdep",
+            "todas"
+          ],
+          "shopifyVariantId": "gid://shopify/ProductVariant/55284372799821",
+          "availability": "unverified",
+          "identification": "visual"
+        },
+        {
+          "id": "protector-purple",
+          "productId": "funda-silicona",
+          "name": "Morado",
+          "color": "Morado",
+          "capacity": null,
+          "primaryImage": "lilap",
+          "additionalImages": [
+            "negro",
+            "blancop",
+            "verdep",
+            "todas"
+          ],
+          "shopifyVariantId": "gid://shopify/ProductVariant/55284372701517",
+          "availability": "unverified",
+          "identification": "visual"
+        },
+        {
+          "id": "protector-green",
+          "productId": "funda-silicona",
+          "name": "Verde",
+          "color": "Verde",
+          "capacity": null,
+          "primaryImage": "verdep",
+          "additionalImages": [
+            "negro",
+            "blancop",
+            "lilap",
+            "todas"
+          ],
+          "shopifyVariantId": "gid://shopify/ProductVariant/55284372767053",
+          "availability": "unverified",
+          "identification": "visual"
+        }
+      ]
+    },
+    "estuche-transporte": {
+      "defaultVariantId": "bag-black",
+      "dimensions": [],
+      "variants": [
+        {
+          "id": "bag-black",
+          "productId": "estuche-transporte",
+          "name": "Estuche negro",
+          "color": "Negro",
+          "capacity": null,
+          "primaryImage": "cajat",
+          "additionalImages": [
+            "cajcerrada",
+            "cajasola",
+            "todo"
+          ],
+          "shopifyVariantId": "gid://shopify/ProductVariant/55284243956045",
+          "availability": "unverified",
+          "identification": "visual"
+        }
+      ]
+    }
+  }
+}

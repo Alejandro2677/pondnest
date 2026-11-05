@@ -1,0 +1,17 @@
+services:
+  - type: web
+    name: pondnest-preview
+    runtime: docker
+    plan: free
+    healthCheckPath: /healthz
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PONDNEST_CHECKOUT_ENABLED
+        value: "false"
+      - key: SHOPIFY_STORE_DOMAIN
+        sync: false
+      - key: SHOPIFY_STOREFRONT_PRIVATE_TOKEN
+        sync: false
+      - key: SHOPIFY_API_VERSION
+        value: "2026-10"

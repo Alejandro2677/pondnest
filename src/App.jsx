@@ -1,3 +1,18 @@
+import PacksSection, { PackDetail, PackSuggestion } from "./components/Packs.jsx";
+import CartSummary from "./components/CartSummary.jsx";
+import VariantSelector from "./components/VariantSelector.jsx";
+import Brand from "./components/Brand.jsx";
+import R36SProductDetails from "./components/R36SProductDetails.jsx";
+import { r36sProduct } from "./data/r36sProduct.js";
+import R36HAirDetails from "./components/R36HAirDetails.jsx";
+import BagProductDetails, { BagRecommendation } from "./components/BagProductDetails.jsx";
+import ProtectorProductDetails, { ProtectorRecommendation } from "./components/ProtectorProductDetails.jsx";
+import { protectorProduct } from "./data/protectorProduct.js";
+import { bagProduct } from "./data/bagProduct.js";
+import { r36hAir } from "./data/r36hAir.js";
+import { getProductVariants, selectedProductVariant, variantGallery } from "./data/productVariants.js";
+import ProductGallery from "./components/ProductGallery.jsx";
+import { productImages, responsiveImage } from "./data/productImages.js";
 import {
   Component,
   Suspense,
@@ -40,16 +55,6 @@ const SiteRouter = import.meta.env.MODE === "pages" ? HashRouter : BrowserRouter
 
 gsap.registerPlugin(ScrollTrigger);
 
-function Brand() {
-  return (
-    <span className="brand">
-      <span className="brand-mark" aria-hidden="true">
-        P<span>N</span>
-      </span>
-      PondNest
-    </span>
-  );
-}
 function Header() {
   const { cart, demo } = useStore();
   const [open, setOpen] = useState(false);
@@ -81,6 +86,7 @@ function Header() {
           className={open ? "nav-open" : ""}
           aria-label="Navegación principal"
         >
+          <Link to="/packs">Packs</Link>
           <Link to="/productos">Consolas y accesorios</Link>
           <Link to="/#juegos">Universo retro</Link>
           <Link to="/faq">Información</Link>
@@ -131,6 +137,9 @@ function PagePosition() {
       pathname === "/"
         ? "R36S 128 GB con ArkOS · El retro regresa"
         : pathname === "/productos/r36s" ? "R36S 128 GB con ArkOS · morada transparente"
+        : pathname === "/productos/r36h" ? r36hAir.title
+        : pathname === "/productos/estuche-transporte" ? bagProduct.title
+        : pathname === "/productos/funda-silicona" ? protectorProduct.title
         : pathname === "/guia-configuracion" ? "Guía de configuración ArkOS"
         : pathname.split("/").filter(Boolean).pop().replaceAll("-", " ");
     document.title = `${title.charAt(0).toUpperCase() + title.slice(1)} | PondNest`;
@@ -289,9 +298,10 @@ function Hero() {
       aria-label="Descubre la R36S"
     >
       <div className="experience-sticky">
-        <div className="hero-wordmark" aria-hidden="true">
-          R36S
-        </div>
+        <div className="hero-wordmark" aria-hidden="true" style={{
+          maskImage: `url(${import.meta.env.BASE_URL}logo/exports/pondnest-icono.webp)`,
+          WebkitMaskImage: `url(${import.meta.env.BASE_URL}logo/exports/pondnest-icono.webp)`,
+        }} />
         <div className="scene-3d">
           {(fixed || !ready) && (
             <img
@@ -360,7 +370,7 @@ function Hero() {
             role="status"
             aria-label="Cargando experiencia 3D"
           >
-            <Brand />
+            <Brand variant="principal" placement="loading" />
             <p>PREPARANDO TU PRÓXIMA PARTIDA</p>
             <progress
               max="100"
@@ -404,6 +414,7 @@ function ProductCards({ category }) {
       <div className="product-grid">
         {products
           .filter((p) => !category || p.category === category)
+          .map(productImages)
           .map((p) => (
             <Link
               className="product-card"
@@ -415,10 +426,12 @@ function ProductCards({ category }) {
                 {p.image ? (
                   <img
                     src={p.image}
+                    {...responsiveImage(p)}
+                    sizes="(max-width: 600px) 90vw, (max-width: 1000px) 45vw, 24vw"
                     alt={p.name}
                     loading="lazy"
-                    width="640"
-                    height="640"
+                    width={p.imageDetails?.[0]?.width || 640}
+                    height={p.imageDetails?.[0]?.height || 640}
                   />
                 ) : (
                   <span>Imagen pendiente</span>
@@ -518,6 +531,7 @@ function Home() {
   return (
     <>
       <Hero />
+      <PacksSection />
       <section className="section section-feature" id="productos">
         <div className="section-topline">
           <span>01 / ENCUENTRA TU FORMATO</span>
@@ -586,13 +600,7 @@ function Home() {
           </p>
         </div>
         <ProductCards category="accessory" />
-        <div className="pack-note">
-          <span>MEJOR JUNTOS, CUANDO ENCAJEN.</span>
-          <p>
-            Los packs estarán disponibles tras verificar compatibilidad y
-            variantes. Por ahora, descubre cada producto por separado.
-          </p>
-        </div>
+
       </section>
       <ReviewsSection />
       <section className="section reassurance">
@@ -641,14 +649,19 @@ function Detail() {
   const { pathname } = useLocation();
   const { products, loading, catalogError, demo, add, busy, cartReady, error } =
     useStore();
-  const product = products.find((p) => p.handle === pathname.split("/").pop());
+  const found = products.find((p) => p.handle === pathname.split("/").pop());
+  const product = found ? productImages(found) : null;
   const [variantId, setVariantId] = useState("");
+  const [visualVariantId, setVisualVariantId] = useState("");
+  const visualConfig = product ? getProductVariants(product) : null;
+  const visualVariant = selectedProductVariant(visualConfig, visualVariantId);
+  const galleryVariant = product?.handle === "estuche-transporte" ? selectedProductVariant(getProductVariants(product)) : visualVariant;
+  const galleryProduct = product ? variantGallery(product, galleryVariant) : null;
   const [quantity, setQuantity] = useState(1);
-  const [image, setImage] = useState(0);
   const navigate = useNavigate();
   useEffect(() => {
     setVariantId("");
-    setImage(0);
+    setVisualVariantId("");
     setQuantity(1);
   }, [pathname]);
   if (loading || catalogError)
@@ -658,58 +671,38 @@ function Detail() {
       </section>
     );
   if (!product) return <NotFound />;
-  const variant =
+  const isR36HAir = product.handle === "r36h";
+  const isBag = product.handle === "estuche-transporte";
+  const isProtector = product.handle === "funda-silicona";
+  const isR36S = product.handle === mainProduct.handle;
+  const variant = !demo && visualVariant ? product.variants.find(v => v.visualId === visualVariant.id) :
     product.variants.find((v) => v.id === variantId) ||
     product.variants.find((v) => v.available) ||
     product.variants[0];
   return (
-    <section className="section page">
+    <section className={`section page${isR36HAir ? " r36h-air-page" : isProtector ? " protector-page" : isR36S ? " r36s-product-page" : ""}`}>
       <Link className="back-link" to="/productos">
         ← Volver a la selección
       </Link>
       <div className="detail-grid">
-        <div className="gallery">
-          <div className="gallery-main">
-            {product.gallery[image] ? (
-              <img
-                src={product.gallery[image]}
-                alt={`${product.name}, vista ${image + 1}`}
-                width="800"
-                height="800"
-              />
-            ) : (
-              <p>Imagen pendiente</p>
-            )}
-          </div>
-          <div className="thumbnails">
-            {product.gallery.map((url, i) => (
-              <button
-                key={url}
-                onClick={() => setImage(i)}
-                aria-label={`Ver imagen ${i + 1}`}
-                aria-pressed={image === i}
-              >
-                <img src={url} alt="" width="80" height="80" />
-              </button>
-            ))}
-          </div>
-          {demo && (
-            <p className="editorial-note">
-              Referencia visual de demostración. Derechos y fidelidad técnica
-              pendientes de revisión.
-            </p>
-          )}
-        </div>
+        <ProductGallery key={`${product.handle}:${visualVariant?.primaryImage || "general"}`} product={galleryProduct} demo={demo} />
         <div className="detail-copy">
           <span className="eyebrow">{product.tag}</span>
-          <h1>{product.name}</h1>
-          <p>{product.description}</p>
+          <h1>{isR36HAir ? r36hAir.title : isBag ? bagProduct.title : isProtector ? protectorProduct.title : isR36S ? r36sProduct.title : product.name}</h1>
+          <p className={isR36HAir ? "air-subtitle" : isR36S ? "r36s-subtitle" : undefined}>{isR36HAir ? r36hAir.subtitle : isBag ? bagProduct.description : isProtector ? protectorProduct.description : isR36S ? r36sProduct.subtitle : product.description}</p>
+          {isBag && <p className="bag-included-note">{bagProduct.contents}</p>}
+          {isProtector && <p className="protector-contents">{protectorProduct.contents}</p>}
+          {isR36HAir && <p className="editorial-note">Información anunciada por el proveedor, pendiente de comprobación por PondNest.</p>}
           {product.handle === mainProduct.handle && <SupplierRating />}
-          <p className="detail-price">{money(variant?.price)}</p>
+          {isR36S && <><p className="r36s-reference">Referencia protagonista: 128 GB · Sistema operativo ArkOS · Morada transparente.</p><p className="editorial-note">Configuración anunciada por el proveedor. La capacidad y el sistema de las demás referencias visuales están pendientes de comprobar.</p></>}
+          <p id={isR36HAir ? "air-purchase" : isProtector ? "protector-purchase" : isR36S ? "r36s-purchase" : undefined} className="detail-price">{isR36HAir && !variant?.price ? "Precio pendiente de configurar" : money(variant?.price)}</p>
           {demo && (
             <p className="demo-label">MODO DEMO · Compra no disponible</p>
           )}
-          <label className="field">
+          {isBag ? <p className="bag-single-color">Color: Negro</p> : visualConfig ? (
+            <VariantSelector product={product} config={visualConfig} selected={visualVariant} onChange={setVisualVariantId} />
+          ) : product.variants.length > 1 ? (
+            <label className="field">
             {demo ? "Referencia" : "Variante"}
             <select
               value={variant?.id || ""}
@@ -724,6 +717,7 @@ function Detail() {
               ))}
             </select>
           </label>
+          ) : null}
           <label className="field">
             Cantidad
             <input
@@ -753,7 +747,7 @@ function Detail() {
             {busy
               ? "Actualizando…"
               : !variant?.available
-                ? "Agotado"
+                ? (variant?.mapped === false ? "Pendiente de vincular con Shopify" : "Agotado")
                 : demo
                   ? "Añadir al carrito demo ↗"
                   : "Añadir al carrito ↗"}
@@ -768,7 +762,7 @@ function Detail() {
               ? "Precio, stock, impuestos y entrega pendientes de confirmar."
               : "Gastos de envío e impuestos según configuración de la tienda, indicados en checkout."}
           </p>
-          {product.facts.length > 0 && (
+          {!isR36HAir && !isBag && !isProtector && !isR36S && product.facts.length > 0 && (
             <>
               <h2>Detalles visibles</h2>
               <ul>
@@ -778,8 +772,8 @@ function Detail() {
               </ul>
             </>
           )}
-          {product.note && <div className="notice">{product.note}</div>}
-          {product.category === "console" && <p><Link to="/guia-configuracion">¿Necesitas ayuda para configurar tu consola? Consulta nuestra guía.</Link></p>}
+          {!isR36HAir && !isBag && !isProtector && !isR36S && product.note && <div className="notice">{product.note}</div>}
+          {!isR36S && product.category === "console" && <p><Link to="/guia-configuracion">¿Necesitas ayuda para configurar tu consola? Consulta nuestra guía.</Link></p>}
           <div className="detail-links">
             <Link to="/envios">Envíos</Link>
             <Link to="/devoluciones">Devoluciones</Link>
@@ -787,10 +781,17 @@ function Detail() {
           </div>
         </div>
       </div>
+      {isR36HAir && <R36HAirDetails product={product} />}
+      {isBag && <BagProductDetails />}
+      {isProtector && <ProtectorProductDetails priceLabel={money(variant?.price)} />}
+      {isR36S && <R36SProductDetails product={product} priceLabel={money(variant?.price)} />}
+      {isR36S && <section className="r36s-accessories" aria-labelledby="r36s-accessories-title"><span className="eyebrow">TU EQUIPO / PRÓXIMAMENTE</span><h2 id="r36s-accessories-title">Accesorios en preparación</h2><BagRecommendation product={products.find(p => p.handle === "estuche-transporte")} /><ProtectorRecommendation product={products.find(p => p.handle === "funda-silicona")} consoleProduct={product} consoleVariant={variant} /></section>}
+      <PackSuggestion handle={product.handle} />
     </section>
   );
 }
-function Cart() {
+function Cart({ summary = false }) {
+  const navigate = useNavigate();
   const {
     cart,
     demo,
@@ -799,12 +800,13 @@ function Cart() {
     error,
     notice,
     checkout,
+    review,
     cartReady,
     restoreCart,
   } = useStore();
   return (
     <section className="section page cart-page">
-      <span className="eyebrow">TU SELECCIÓN</span>
+      <span className="eyebrow">{summary ? "RESUMEN DEL PEDIDO" : "TU SELECCIÓN"}</span>
       <h1>
         Un paso más
         <br />
@@ -851,11 +853,15 @@ function Cart() {
                   <img src={l.image} alt={l.name} width="120" height="120" />
                 )}
                 <div>
-                  <Link to={`/productos/${l.handle}`}>
+                  <Link to={l.demoPack || l.realPack ? `/packs/${l.packId}` : `/productos/${l.handle}`}>
                     <h2>{l.name}</h2>
                   </Link>
                   <p>{l.variant}</p>
-                  <p>{money(l.price)}</p>
+                  <p>Precio unitario: {money(l.price)}</p>
+                  <p>Subtotal: {money(l.total)}</p>
+                  {l.realPack && <ul className="cart-pack-components">{l.components.map(component => <li key={component.variantId}>{component.quantity} × {component.name}<small>{component.variant}</small></li>)}</ul>}
+                  {l.demoPack && <><p className="cart-pack-demo">Pack de demostración · Precio propuesto con IVA incluido cuando corresponda.</p><ul className="cart-pack-components">{l.components.map(component => <li key={component.handle}>1 × {component.name} por pack<small>{component.variant}</small></li>)}</ul><p>Componentes incluidos en el precio del pack. Se modifican y eliminan juntos.</p></>}
+                  {!l.available && <p role="alert">Variante no disponible o pendiente de vincular.</p>}
                   <div className="quantity">
                     <button
                       aria-label={`Reducir cantidad de ${l.name}`}
@@ -879,39 +885,15 @@ function Cart() {
                       disabled={busy}
                       onClick={() => update(l.id, 0)}
                     >
-                      Quitar
+                      {l.demoPack ? "Eliminar pack completo" : "Quitar"}
                     </button>
                   </div>
                 </div>
               </article>
             ))}
           </div>
-          <aside className="cart-summary">
-            <h2>Tu resumen</h2>
-            <div>
-              <span>Subtotal</span>
-              <strong>{demo ? "Por confirmar" : money(cart.subtotal)}</strong>
-            </div>
-            <p>
-              {demo
-                ? "No hay importes comerciales configurados en esta demo."
-                : "Envío e impuestos se calculan en Shopify Checkout. El stock y los precios se revisan antes del pago."}
-            </p>
-            <button
-              className="button primary full"
-              disabled={demo || busy}
-              onClick={checkout}
-            >
-              {demo
-                ? "Compra no disponible"
-                : busy
-                  ? "Conectando…"
-                  : "Continuar a Shopify ↗"}
-            </button>
-            <Link className="text-button" to="/productos">
-              Seguir explorando
-            </Link>
-          </aside>
+          <CartSummary cart={cart} demo={demo} busy={busy}
+            onCheckout={async () => { if (summary) await checkout(); else if (await review()) navigate("/resumen-pedido"); }} />
         </div>
       )}
     </section>
@@ -954,16 +936,13 @@ function Footer() {
     <footer className="footer">
       <div>
         <Link to="/">
-          <Brand />
+          <Brand placement="footer" />
         </Link>
         <p>
           Las ganas de jugar
           <br />
           no pasan de moda.
         </p>
-        <span className="editorial-note">
-          Identidad provisional · Logo oficial pendiente.
-        </span>
       </div>
       <div className="footer-links">
         <Link to="/productos">La selección</Link>
@@ -996,7 +975,7 @@ export default function App() {
             <Route
               path="/productos"
               element={
-                <section className="section page">
+                <><PacksSection page headingLevel={2} /><section className="section">
                   <span className="eyebrow">LA SELECCIÓN PONDNEST</span>
                   <h1>
                     Encuentra tu
@@ -1004,12 +983,15 @@ export default function App() {
                     <em>próxima partida.</em>
                   </h1>
                   <ProductCards />
-                </section>
+                </section></>
               }
             />
             <Route path="/productos/:handle" element={<Detail />} />
             <Route path="/productos/gamegaga-r36-hd" element={<Navigate to="/productos/r36s" replace />} />
+            <Route path="/packs" element={<PacksSection page />} />
+            <Route path="/packs/:packId" element={<PackDetail />} />
             <Route path="/carrito" element={<Cart />} />
+            <Route path="/resumen-pedido" element={<Cart summary />} />
             <Route path="/guia-configuracion" element={<Suspense fallback={<p className="section page" role="status">Cargando guía…</p>}><SetupGuide /></Suspense>} />
             <Route
               path="/faq"

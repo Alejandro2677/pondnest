@@ -1,0 +1,15 @@
+node_modules
+dist
+.git
+.env
+.env.*
+!.env.example
+test-results
+playwright-report
+artifacts
+tmp
+temp
+server/checkout-test-session.json
+SHOPIFY_*AUDIT*.json
+SHOPIFY_*TESTS*.json
+config/internal

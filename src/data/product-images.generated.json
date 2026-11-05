@@ -1,0 +1,810 @@
+{
+  "products": {
+    "r36s": [
+      {
+        "source": "portada",
+        "src": "productos/r36s/_optimized/c8301b91e49d-48d185c869318533-full.webp",
+        "bytes": 116500,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/r36s/_optimized/c8301b91e49d-48d185c869318533-320.webp",
+            "bytes": 15242,
+            "width": 320
+          },
+          {
+            "src": "productos/r36s/_optimized/c8301b91e49d-48d185c869318533-640.webp",
+            "bytes": 41554,
+            "width": 640
+          },
+          {
+            "src": "productos/r36s/_optimized/c8301b91e49d-48d185c869318533-960.webp",
+            "bytes": 70706,
+            "width": 960
+          }
+        ]
+      },
+      {
+        "source": "Imagen de ChatGPT 3 nov 2026, 18_26_30-1.png",
+        "src": "productos/r36s/_optimized/35ecca0ecfeb-b68459b766bd4391-full.webp",
+        "bytes": 85166,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/r36s/_optimized/35ecca0ecfeb-b68459b766bd4391-320.webp",
+            "bytes": 12902,
+            "width": 320
+          },
+          {
+            "src": "productos/r36s/_optimized/35ecca0ecfeb-b68459b766bd4391-640.webp",
+            "bytes": 32322,
+            "width": 640
+          },
+          {
+            "src": "productos/r36s/_optimized/35ecca0ecfeb-b68459b766bd4391-960.webp",
+            "bytes": 53546,
+            "width": 960
+          }
+        ]
+      },
+      {
+        "source": "Imagen de ChatGPT 3 nov 2026, 18_26_43-2.png",
+        "src": "productos/r36s/_optimized/88ce32b54e26-3edb41fcc49c93b1-full.webp",
+        "bytes": 73842,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/r36s/_optimized/88ce32b54e26-3edb41fcc49c93b1-320.webp",
+            "bytes": 11108,
+            "width": 320
+          },
+          {
+            "src": "productos/r36s/_optimized/88ce32b54e26-3edb41fcc49c93b1-640.webp",
+            "bytes": 27912,
+            "width": 640
+          },
+          {
+            "src": "productos/r36s/_optimized/88ce32b54e26-3edb41fcc49c93b1-960.webp",
+            "bytes": 45908,
+            "width": 960
+          }
+        ]
+      },
+      {
+        "source": "Imagen de ChatGPT 3 nov 2026, 18_26_46-3.png",
+        "src": "productos/r36s/_optimized/b532a9f0c054-a6e771f9ec85ae92-full.webp",
+        "bytes": 74018,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/r36s/_optimized/b532a9f0c054-a6e771f9ec85ae92-320.webp",
+            "bytes": 10338,
+            "width": 320
+          },
+          {
+            "src": "productos/r36s/_optimized/b532a9f0c054-a6e771f9ec85ae92-640.webp",
+            "bytes": 27538,
+            "width": 640
+          },
+          {
+            "src": "productos/r36s/_optimized/b532a9f0c054-a6e771f9ec85ae92-960.webp",
+            "bytes": 45920,
+            "width": 960
+          }
+        ]
+      },
+      {
+        "source": "Imagen de ChatGPT 3 nov 2026, 18_26_48-4.png",
+        "src": "productos/r36s/_optimized/5e999854e046-4939bbb3810168fb-full.webp",
+        "bytes": 133828,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/r36s/_optimized/5e999854e046-4939bbb3810168fb-320.webp",
+            "bytes": 16952,
+            "width": 320
+          },
+          {
+            "src": "productos/r36s/_optimized/5e999854e046-4939bbb3810168fb-640.webp",
+            "bytes": 46820,
+            "width": 640
+          },
+          {
+            "src": "productos/r36s/_optimized/5e999854e046-4939bbb3810168fb-960.webp",
+            "bytes": 82356,
+            "width": 960
+          }
+        ]
+      },
+      {
+        "source": "Imagen de ChatGPT 3 nov 2026, 18_26_51-5.png",
+        "src": "productos/r36s/_optimized/96aa58157128-f43beb969e02e911-full.webp",
+        "bytes": 120872,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/r36s/_optimized/96aa58157128-f43beb969e02e911-320.webp",
+            "bytes": 14696,
+            "width": 320
+          },
+          {
+            "src": "productos/r36s/_optimized/96aa58157128-f43beb969e02e911-640.webp",
+            "bytes": 41302,
+            "width": 640
+          },
+          {
+            "src": "productos/r36s/_optimized/96aa58157128-f43beb969e02e911-960.webp",
+            "bytes": 72520,
+            "width": 960
+          }
+        ]
+      },
+      {
+        "source": "Imagen de ChatGPT 3 nov 2026, 18_26_53-6.png",
+        "src": "productos/r36s/_optimized/2b978c9e66b5-a883a178c65b1001-full.webp",
+        "bytes": 121384,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/r36s/_optimized/2b978c9e66b5-a883a178c65b1001-320.webp",
+            "bytes": 14304,
+            "width": 320
+          },
+          {
+            "src": "productos/r36s/_optimized/2b978c9e66b5-a883a178c65b1001-640.webp",
+            "bytes": 41316,
+            "width": 640
+          },
+          {
+            "src": "productos/r36s/_optimized/2b978c9e66b5-a883a178c65b1001-960.webp",
+            "bytes": 72320,
+            "width": 960
+          }
+        ]
+      },
+      {
+        "source": "azul",
+        "src": "productos/r36s/_optimized/a4bd1d3a69aa-958ed2c9710eec75-full.webp",
+        "bytes": 122462,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/r36s/_optimized/a4bd1d3a69aa-958ed2c9710eec75-320.webp",
+            "bytes": 15082,
+            "width": 320
+          },
+          {
+            "src": "productos/r36s/_optimized/a4bd1d3a69aa-958ed2c9710eec75-640.webp",
+            "bytes": 41708,
+            "width": 640
+          },
+          {
+            "src": "productos/r36s/_optimized/a4bd1d3a69aa-958ed2c9710eec75-960.webp",
+            "bytes": 73448,
+            "width": 960
+          }
+        ]
+      },
+      {
+        "source": "azultr",
+        "src": "productos/r36s/_optimized/da3e1adb2c99-206ce717d94ee98a-full.webp",
+        "bytes": 126850,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/r36s/_optimized/da3e1adb2c99-206ce717d94ee98a-320.webp",
+            "bytes": 15590,
+            "width": 320
+          },
+          {
+            "src": "productos/r36s/_optimized/da3e1adb2c99-206ce717d94ee98a-640.webp",
+            "bytes": 44610,
+            "width": 640
+          },
+          {
+            "src": "productos/r36s/_optimized/da3e1adb2c99-206ce717d94ee98a-960.webp",
+            "bytes": 76758,
+            "width": 960
+          }
+        ]
+      },
+      {
+        "source": "blanco",
+        "src": "productos/r36s/_optimized/d599668f93b8-8ea46d3c15688272-full.webp",
+        "bytes": 69256,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/r36s/_optimized/d599668f93b8-8ea46d3c15688272-320.webp",
+            "bytes": 10160,
+            "width": 320
+          },
+          {
+            "src": "productos/r36s/_optimized/d599668f93b8-8ea46d3c15688272-640.webp",
+            "bytes": 26610,
+            "width": 640
+          },
+          {
+            "src": "productos/r36s/_optimized/d599668f93b8-8ea46d3c15688272-960.webp",
+            "bytes": 44064,
+            "width": 960
+          }
+        ]
+      },
+      {
+        "source": "morado",
+        "src": "productos/r36s/_optimized/113a75f9a6ae-5effe5dd68e01bd1-full.webp",
+        "bytes": 107048,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/r36s/_optimized/113a75f9a6ae-5effe5dd68e01bd1-320.webp",
+            "bytes": 14162,
+            "width": 320
+          },
+          {
+            "src": "productos/r36s/_optimized/113a75f9a6ae-5effe5dd68e01bd1-640.webp",
+            "bytes": 39606,
+            "width": 640
+          },
+          {
+            "src": "productos/r36s/_optimized/113a75f9a6ae-5effe5dd68e01bd1-960.webp",
+            "bytes": 66454,
+            "width": 960
+          }
+        ]
+      },
+      {
+        "source": "moradoclaro",
+        "src": "productos/r36s/_optimized/bd951f2fed66-ae590dc5d0360a4c-full.webp",
+        "bytes": 75128,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/r36s/_optimized/bd951f2fed66-ae590dc5d0360a4c-320.webp",
+            "bytes": 11014,
+            "width": 320
+          },
+          {
+            "src": "productos/r36s/_optimized/bd951f2fed66-ae590dc5d0360a4c-640.webp",
+            "bytes": 28004,
+            "width": 640
+          },
+          {
+            "src": "productos/r36s/_optimized/bd951f2fed66-ae590dc5d0360a4c-960.webp",
+            "bytes": 46882,
+            "width": 960
+          }
+        ]
+      },
+      {
+        "source": "rojo",
+        "src": "productos/r36s/_optimized/49bfb8998b3f-fd851464994f47f0-full.webp",
+        "bytes": 82816,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/r36s/_optimized/49bfb8998b3f-fd851464994f47f0-320.webp",
+            "bytes": 12596,
+            "width": 320
+          },
+          {
+            "src": "productos/r36s/_optimized/49bfb8998b3f-fd851464994f47f0-640.webp",
+            "bytes": 31996,
+            "width": 640
+          },
+          {
+            "src": "productos/r36s/_optimized/49bfb8998b3f-fd851464994f47f0-960.webp",
+            "bytes": 52446,
+            "width": 960
+          }
+        ]
+      },
+      {
+        "source": "rojotr",
+        "src": "productos/r36s/_optimized/a910b24c5733-d7c669bcd7a127e9-full.webp",
+        "bytes": 110652,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/r36s/_optimized/a910b24c5733-d7c669bcd7a127e9-320.webp",
+            "bytes": 14460,
+            "width": 320
+          },
+          {
+            "src": "productos/r36s/_optimized/a910b24c5733-d7c669bcd7a127e9-640.webp",
+            "bytes": 40214,
+            "width": 640
+          },
+          {
+            "src": "productos/r36s/_optimized/a910b24c5733-d7c669bcd7a127e9-960.webp",
+            "bytes": 67378,
+            "width": 960
+          }
+        ]
+      }
+    ],
+    "estuche-transporte": [
+      {
+        "source": "cajasola",
+        "src": "productos/bag/_optimized/e4e39103f6f6-e0cd3c3025f5b154-full.webp",
+        "bytes": 248814,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/bag/_optimized/e4e39103f6f6-e0cd3c3025f5b154-320.webp",
+            "bytes": 12044,
+            "width": 320
+          },
+          {
+            "src": "productos/bag/_optimized/e4e39103f6f6-e0cd3c3025f5b154-640.webp",
+            "bytes": 58962,
+            "width": 640
+          },
+          {
+            "src": "productos/bag/_optimized/e4e39103f6f6-e0cd3c3025f5b154-960.webp",
+            "bytes": 129170,
+            "width": 960
+          }
+        ]
+      },
+      {
+        "source": "cajat",
+        "src": "productos/bag/_optimized/d82a47e4a3d4-09fede436f7dcfa0-full.webp",
+        "bytes": 313036,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/bag/_optimized/d82a47e4a3d4-09fede436f7dcfa0-320.webp",
+            "bytes": 20324,
+            "width": 320
+          },
+          {
+            "src": "productos/bag/_optimized/d82a47e4a3d4-09fede436f7dcfa0-640.webp",
+            "bytes": 79516,
+            "width": 640
+          },
+          {
+            "src": "productos/bag/_optimized/d82a47e4a3d4-09fede436f7dcfa0-960.webp",
+            "bytes": 166828,
+            "width": 960
+          }
+        ]
+      },
+      {
+        "source": "cajcerrada",
+        "src": "productos/bag/_optimized/1201b657139b-a902b19b1ceed500-full.webp",
+        "bytes": 119484,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/bag/_optimized/1201b657139b-a902b19b1ceed500-320.webp",
+            "bytes": 5656,
+            "width": 320
+          },
+          {
+            "src": "productos/bag/_optimized/1201b657139b-a902b19b1ceed500-640.webp",
+            "bytes": 20668,
+            "width": 640
+          },
+          {
+            "src": "productos/bag/_optimized/1201b657139b-a902b19b1ceed500-960.webp",
+            "bytes": 46924,
+            "width": 960
+          }
+        ]
+      },
+      {
+        "source": "todo",
+        "src": "productos/bag/_optimized/602fae580f58-456338a75d2cb5ef-full.webp",
+        "bytes": 279862,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/bag/_optimized/602fae580f58-456338a75d2cb5ef-320.webp",
+            "bytes": 20330,
+            "width": 320
+          },
+          {
+            "src": "productos/bag/_optimized/602fae580f58-456338a75d2cb5ef-640.webp",
+            "bytes": 74508,
+            "width": 640
+          },
+          {
+            "src": "productos/bag/_optimized/602fae580f58-456338a75d2cb5ef-960.webp",
+            "bytes": 155250,
+            "width": 960
+          }
+        ]
+      }
+    ],
+    "funda-silicona": [
+      {
+        "source": "todas",
+        "src": "productos/protector/_optimized/e266ea0f7ee3-01c66a57a6ee9449-full.webp",
+        "bytes": 114856,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/protector/_optimized/e266ea0f7ee3-01c66a57a6ee9449-320.webp",
+            "bytes": 18152,
+            "width": 320
+          },
+          {
+            "src": "productos/protector/_optimized/e266ea0f7ee3-01c66a57a6ee9449-640.webp",
+            "bytes": 44254,
+            "width": 640
+          },
+          {
+            "src": "productos/protector/_optimized/e266ea0f7ee3-01c66a57a6ee9449-960.webp",
+            "bytes": 71538,
+            "width": 960
+          }
+        ]
+      },
+      {
+        "source": "amarillop",
+        "src": "productos/protector/_optimized/8169285c35e2-0176ab8f40799492-full.webp",
+        "bytes": 49522,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/protector/_optimized/8169285c35e2-0176ab8f40799492-320.webp",
+            "bytes": 7718,
+            "width": 320
+          },
+          {
+            "src": "productos/protector/_optimized/8169285c35e2-0176ab8f40799492-640.webp",
+            "bytes": 19698,
+            "width": 640
+          },
+          {
+            "src": "productos/protector/_optimized/8169285c35e2-0176ab8f40799492-960.webp",
+            "bytes": 31156,
+            "width": 960
+          }
+        ]
+      },
+      {
+        "source": "azulp",
+        "src": "productos/protector/_optimized/9c1a013735b0-fa7fc81156dd4c3f-full.webp",
+        "bytes": 53258,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/protector/_optimized/9c1a013735b0-fa7fc81156dd4c3f-320.webp",
+            "bytes": 8244,
+            "width": 320
+          },
+          {
+            "src": "productos/protector/_optimized/9c1a013735b0-fa7fc81156dd4c3f-640.webp",
+            "bytes": 20982,
+            "width": 640
+          },
+          {
+            "src": "productos/protector/_optimized/9c1a013735b0-fa7fc81156dd4c3f-960.webp",
+            "bytes": 33952,
+            "width": 960
+          }
+        ]
+      },
+      {
+        "source": "blancop",
+        "src": "productos/protector/_optimized/031da55fa343-3f179d650f42117e-full.webp",
+        "bytes": 40094,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/protector/_optimized/031da55fa343-3f179d650f42117e-320.webp",
+            "bytes": 6040,
+            "width": 320
+          },
+          {
+            "src": "productos/protector/_optimized/031da55fa343-3f179d650f42117e-640.webp",
+            "bytes": 15194,
+            "width": 640
+          },
+          {
+            "src": "productos/protector/_optimized/031da55fa343-3f179d650f42117e-960.webp",
+            "bytes": 25458,
+            "width": 960
+          }
+        ]
+      },
+      {
+        "source": "lilap",
+        "src": "productos/protector/_optimized/f5505ee4882e-8fc77b1253b27e29-full.webp",
+        "bytes": 46186,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/protector/_optimized/f5505ee4882e-8fc77b1253b27e29-320.webp",
+            "bytes": 7028,
+            "width": 320
+          },
+          {
+            "src": "productos/protector/_optimized/f5505ee4882e-8fc77b1253b27e29-640.webp",
+            "bytes": 17886,
+            "width": 640
+          },
+          {
+            "src": "productos/protector/_optimized/f5505ee4882e-8fc77b1253b27e29-960.webp",
+            "bytes": 29578,
+            "width": 960
+          }
+        ]
+      },
+      {
+        "source": "negro",
+        "src": "productos/protector/_optimized/f59e28f8bb64-e44bc1d4db4c3677-full.webp",
+        "bytes": 42500,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/protector/_optimized/f59e28f8bb64-e44bc1d4db4c3677-320.webp",
+            "bytes": 6030,
+            "width": 320
+          },
+          {
+            "src": "productos/protector/_optimized/f59e28f8bb64-e44bc1d4db4c3677-640.webp",
+            "bytes": 15776,
+            "width": 640
+          },
+          {
+            "src": "productos/protector/_optimized/f59e28f8bb64-e44bc1d4db4c3677-960.webp",
+            "bytes": 26484,
+            "width": 960
+          }
+        ]
+      },
+      {
+        "source": "rojop",
+        "src": "productos/protector/_optimized/e427dce786c7-9be75cb1fbd81d1c-full.webp",
+        "bytes": 53604,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/protector/_optimized/e427dce786c7-9be75cb1fbd81d1c-320.webp",
+            "bytes": 8190,
+            "width": 320
+          },
+          {
+            "src": "productos/protector/_optimized/e427dce786c7-9be75cb1fbd81d1c-640.webp",
+            "bytes": 20770,
+            "width": 640
+          },
+          {
+            "src": "productos/protector/_optimized/e427dce786c7-9be75cb1fbd81d1c-960.webp",
+            "bytes": 33914,
+            "width": 960
+          }
+        ]
+      },
+      {
+        "source": "rosap",
+        "src": "productos/protector/_optimized/b29e8cf969be-da3706ccdb1047d7-full.webp",
+        "bytes": 44168,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/protector/_optimized/b29e8cf969be-da3706ccdb1047d7-320.webp",
+            "bytes": 6484,
+            "width": 320
+          },
+          {
+            "src": "productos/protector/_optimized/b29e8cf969be-da3706ccdb1047d7-640.webp",
+            "bytes": 16892,
+            "width": 640
+          },
+          {
+            "src": "productos/protector/_optimized/b29e8cf969be-da3706ccdb1047d7-960.webp",
+            "bytes": 28234,
+            "width": 960
+          }
+        ]
+      },
+      {
+        "source": "verdep",
+        "src": "productos/protector/_optimized/493021fdd07b-3328ee9c364c41be-full.webp",
+        "bytes": 54870,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/protector/_optimized/493021fdd07b-3328ee9c364c41be-320.webp",
+            "bytes": 8830,
+            "width": 320
+          },
+          {
+            "src": "productos/protector/_optimized/493021fdd07b-3328ee9c364c41be-640.webp",
+            "bytes": 21712,
+            "width": 640
+          },
+          {
+            "src": "productos/protector/_optimized/493021fdd07b-3328ee9c364c41be-960.webp",
+            "bytes": 35086,
+            "width": 960
+          }
+        ]
+      }
+    ],
+    "r36h": [
+      {
+        "source": "morado36h",
+        "src": "productos/r36h/_optimized/443b5abccc04-ba8d627c0611eaf9-full.webp",
+        "bytes": 104628,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/r36h/_optimized/443b5abccc04-ba8d627c0611eaf9-320.webp",
+            "bytes": 12756,
+            "width": 320
+          },
+          {
+            "src": "productos/r36h/_optimized/443b5abccc04-ba8d627c0611eaf9-640.webp",
+            "bytes": 36032,
+            "width": 640
+          },
+          {
+            "src": "productos/r36h/_optimized/443b5abccc04-ba8d627c0611eaf9-960.webp",
+            "bytes": 61928,
+            "width": 960
+          }
+        ]
+      },
+      {
+        "source": "blanco36h",
+        "src": "productos/r36h/_optimized/fc2ec9c47ac2-272c8107ecc9f11e-full.webp",
+        "bytes": 74592,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/r36h/_optimized/fc2ec9c47ac2-272c8107ecc9f11e-320.webp",
+            "bytes": 10932,
+            "width": 320
+          },
+          {
+            "src": "productos/r36h/_optimized/fc2ec9c47ac2-272c8107ecc9f11e-640.webp",
+            "bytes": 27582,
+            "width": 640
+          },
+          {
+            "src": "productos/r36h/_optimized/fc2ec9c47ac2-272c8107ecc9f11e-960.webp",
+            "bytes": 45746,
+            "width": 960
+          }
+        ]
+      },
+      {
+        "source": "dos",
+        "src": "productos/r36h/_optimized/c1299854f2b2-45a48b9d5fd6e501-full.webp",
+        "bytes": 121730,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/r36h/_optimized/c1299854f2b2-45a48b9d5fd6e501-320.webp",
+            "bytes": 16030,
+            "width": 320
+          },
+          {
+            "src": "productos/r36h/_optimized/c1299854f2b2-45a48b9d5fd6e501-640.webp",
+            "bytes": 43224,
+            "width": 640
+          },
+          {
+            "src": "productos/r36h/_optimized/c1299854f2b2-45a48b9d5fd6e501-960.webp",
+            "bytes": 73050,
+            "width": 960
+          }
+        ]
+      },
+      {
+        "source": "dos mn",
+        "src": "productos/r36h/_optimized/1459765bd8e9-8813296e817cd5ff-full.webp",
+        "bytes": 169442,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/r36h/_optimized/1459765bd8e9-8813296e817cd5ff-320.webp",
+            "bytes": 19190,
+            "width": 320
+          },
+          {
+            "src": "productos/r36h/_optimized/1459765bd8e9-8813296e817cd5ff-640.webp",
+            "bytes": 55836,
+            "width": 640
+          },
+          {
+            "src": "productos/r36h/_optimized/1459765bd8e9-8813296e817cd5ff-960.webp",
+            "bytes": 97116,
+            "width": 960
+          }
+        ]
+      },
+      {
+        "source": "negro36h",
+        "src": "productos/r36h/_optimized/629c3cbaa9a8-505c76930975bbe7-full.webp",
+        "bytes": 98048,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/r36h/_optimized/629c3cbaa9a8-505c76930975bbe7-320.webp",
+            "bytes": 12220,
+            "width": 320
+          },
+          {
+            "src": "productos/r36h/_optimized/629c3cbaa9a8-505c76930975bbe7-640.webp",
+            "bytes": 34502,
+            "width": 640
+          },
+          {
+            "src": "productos/r36h/_optimized/629c3cbaa9a8-505c76930975bbe7-960.webp",
+            "bytes": 58394,
+            "width": 960
+          }
+        ]
+      },
+      {
+        "source": "verde36h",
+        "src": "productos/r36h/_optimized/ebfa9b3ea083-cd0bd3dbc302c43c-full.webp",
+        "bytes": 122692,
+        "width": 1254,
+        "height": 1254,
+        "variants": [
+          {
+            "src": "productos/r36h/_optimized/ebfa9b3ea083-cd0bd3dbc302c43c-320.webp",
+            "bytes": 14394,
+            "width": 320
+          },
+          {
+            "src": "productos/r36h/_optimized/ebfa9b3ea083-cd0bd3dbc302c43c-640.webp",
+            "bytes": 41170,
+            "width": 640
+          },
+          {
+            "src": "productos/r36h/_optimized/ebfa9b3ea083-cd0bd3dbc302c43c-960.webp",
+            "bytes": 71678,
+            "width": 960
+          }
+        ]
+      }
+    ]
+  },
+  "report": {
+    "originalBytes": 57039632,
+    "optimizedBytes": 3571208,
+    "responsiveBytes": 7249272,
+    "savedPercent": 93.74
+  }
+}

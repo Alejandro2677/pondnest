@@ -3,13 +3,23 @@
   "version": "0.1.0",
   "private": true,
   "type": "module",
+  "engines": { "node": ">=24 <25" },
   "scripts": {
+    "start": "node server/start.js",
+    "shopify:audit": "node scripts/audit-shopify.mjs",
+    "shopify:audit:packs": "node scripts/audit-packs.mjs",
+    "shopify:test:packs": "node scripts/test-pack-carts.mjs",
     "dev": "vite --host 0.0.0.0",
     "build": "vite build",
     "preview": "vite preview --host 0.0.0.0",
     "test": "node --test tests/unit/*.test.js",
     "test:e2e": "playwright test",
-    "test:shopify": "playwright test -c playwright.live.config.js"
+    "test:production": "playwright test -c playwright.production.config.js",
+    "check:secrets": "python scripts/check-secrets.py",
+    "test:shopify": "playwright test -c playwright.live.config.js",
+    "optimize:images": "node scripts/optimize-images.mjs",
+    "prebuild": "npm run optimize:images",
+    "prepare:logos": "node scripts/prepare-logos.mjs"
   },
   "dependencies": {
     "@react-three/drei": "^10.1.2",
@@ -24,6 +34,7 @@
     "@axe-core/playwright": "^4.14.0",
     "@playwright/test": "^1.64.1",
     "@vitejs/plugin-react": "^4.4.1",
+    "sharp": "^0.35.5",
     "vite": "^6.2.6"
   }
 }

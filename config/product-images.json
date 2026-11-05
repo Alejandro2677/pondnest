@@ -1,0 +1,11 @@
+{
+  "quality": 85,
+  "maxDimension": 1920,
+  "widths": [320, 640, 960],
+  "products": {
+    "r36s": { "folder": "r36s", "primary": "portada", "order": [] },
+    "estuche-transporte": { "folder": "bag", "primary": "cajasola", "order": [] },
+    "funda-silicona": { "folder": "protector", "primary": "todas", "order": [] },
+    "r36h": { "folder": "r36h", "primary": "morado36h", "order": [] }
+  }
+}

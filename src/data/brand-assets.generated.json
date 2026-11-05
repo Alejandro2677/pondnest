@@ -1,0 +1,64 @@
+{
+  "pondnest-principal": {
+    "src": "logo/exports/pondnest-principal.webp",
+    "png": "logo/exports/pondnest-principal.png",
+    "width": 960,
+    "height": 639,
+    "variants": [
+      {
+        "src": "logo/exports/pondnest-principal-320.webp",
+        "width": 320
+      },
+      {
+        "src": "logo/exports/pondnest-principal-640.webp",
+        "width": 640
+      }
+    ]
+  },
+  "pondnest-horizontal": {
+    "src": "logo/exports/pondnest-horizontal.webp",
+    "png": "logo/exports/pondnest-horizontal.png",
+    "width": 1116,
+    "height": 256,
+    "variants": [
+      {
+        "src": "logo/exports/pondnest-horizontal-320.webp",
+        "width": 320
+      },
+      {
+        "src": "logo/exports/pondnest-horizontal-640.webp",
+        "width": 640
+      }
+    ]
+  },
+  "pondnest-icono": {
+    "src": "logo/exports/pondnest-icono.webp",
+    "png": "logo/exports/pondnest-icono.png",
+    "width": 512,
+    "height": 512,
+    "variants": []
+  },
+  "pondnest-fondo-claro": {
+    "src": "logo/exports/pondnest-fondo-claro.webp",
+    "png": "logo/exports/pondnest-fondo-claro.png",
+    "width": 1116,
+    "height": 256,
+    "variants": [
+      {
+        "src": "logo/exports/pondnest-fondo-claro-320.webp",
+        "width": 320
+      },
+      {
+        "src": "logo/exports/pondnest-fondo-claro-640.webp",
+        "width": 640
+      }
+    ]
+  },
+  "pondnest-avatar": {
+    "src": "logo/exports/pondnest-avatar.webp",
+    "png": "logo/exports/pondnest-avatar.png",
+    "width": 512,
+    "height": 512,
+    "variants": []
+  }
+}

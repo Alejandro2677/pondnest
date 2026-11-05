@@ -1,0 +1,24 @@
+﻿{
+  "tax": {
+    "pricesIncludeTax": true,
+    "verified": false,
+    "assumedCountry": "ES",
+    "ratesByCountry": { "ES": 2100 },
+    "productRatesByCountry": {},
+    "shippingRateBps": 2100
+  },
+  "shipping": {
+    "currencyCode": "EUR",
+    "standardAmount": "4.00",
+    "realRateVerified": false,
+    "countries": ["ES"],
+    "excludedPostalPrefixes": ["35", "38", "51", "52"],
+    "promotion": {
+      "enabled": false,
+      "shopifyVerified": false,
+      "minimumSubtotal": "0.00",
+      "startsAt": null,
+      "endsAt": null
+    }
+  }
+}

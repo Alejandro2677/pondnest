@@ -1,0 +1,29 @@
+﻿.cart-summary.order-summary { min-width: 0; padding: clamp(20px, 3vw, 32px); background: linear-gradient(145deg, #1b1721, #121115); border-color: #3a3044; border-radius: 14px; }
+.order-summary .order-summary-kicker { color: #b9a3ce; font-size: 10px; letter-spacing: .18em; }
+.order-summary h2 { margin: 12px 0 25px; font-size: clamp(23px, 2.2vw, 29px); }
+.order-summary-products { list-style: none; padding: 0 0 20px; margin: 0 0 20px; border-bottom: 1px solid #342d3c; }
+.order-summary-products li, .order-summary dl > div { display: flex; justify-content: space-between; align-items: baseline; gap: 18px; }
+.order-summary-products li { padding: 9px 0; font-size: 12px; }
+.order-summary-products li > span { min-width: 0; overflow-wrap: anywhere; }
+.order-summary-products small, .order-summary-total small { display: block; margin-top: 6px; color: #a89cb5; font-size: 11px; line-height: 1.5; font-weight: 400; }
+.order-summary-products strong { font-size: 12px; font-weight: 500; text-align: right; }
+.order-summary dl { margin: 0; }
+.order-summary dl > div { margin: 14px 0; font-size: 13px; line-height: 1.6; }
+.order-summary dt { color: #c4bacd; flex: 1; }
+.order-summary dd { margin: 0; text-align: right; font-variant-numeric: tabular-nums; max-width: 52%; }
+.order-summary del { color: #9d93a7; margin-right: 6px; font-size: 12px; }
+.order-summary .order-summary-saving, .order-summary .order-summary-saving dt, .order-summary .order-summary-promotion { color: #cbb4e3; }
+.order-summary .order-summary-promotion { margin-top: 0; }
+.order-summary .order-summary-tax { padding-top: 10px; margin-top: 20px; border-top: 1px solid #342d3c; }
+.order-summary .order-summary-tax > div { font-size: 12px; }
+.order-summary .order-summary-tax-note { font-size: 11px; line-height: 1.7; }
+.order-summary .order-summary-total { margin-top: 24px; padding-top: 18px; border-top: 1px solid #51405f; }
+.order-summary .order-summary-total dt { color: #f6f0fb; font-size: 15px; }
+.order-summary .order-summary-total dd { font-size: clamp(24px, 2.5vw, 34px); font-weight: 600; letter-spacing: -.04em; color: #f6f0fb; }
+.order-summary .order-summary-savings { color: #d4bde9; padding: 10px 12px; border-radius: 6px; background: #b28acb0c; }
+.cart-summary.order-summary > .order-summary-trust { display: block; margin: 18px 0 24px; }
+.order-summary-trust p { margin: 7px 0; font-size: 11px; }
+.order-summary-trust nav { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 14px; }
+.order-summary-trust a { font-size: 11px; color: #c5b0d8; text-decoration: underline; text-underline-offset: 3px; }
+.order-summary .button { min-height: 50px; }
+@media (max-width: 480px) { .cart-page .cart-layout { gap: 24px; } .order-summary dl > div { gap: 10px; font-size: 12px; } .order-summary .order-summary-total dd { font-size: 25px; } }

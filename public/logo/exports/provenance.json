@@ -1,0 +1,22 @@
+{
+  "source": "public/logo/Logotipo minimalista PondNest en blanco y negro.png",
+  "monogramBox": {
+    "left": 372,
+    "top": 310,
+    "width": 517,
+    "height": 441
+  },
+  "wordmarkBox": {
+    "left": 149,
+    "top": 789,
+    "width": 960,
+    "height": 160
+  },
+  "principalBox": {
+    "left": 149,
+    "top": 310,
+    "width": 960,
+    "height": 639
+  },
+  "method": "Original raster extraction; black matte removed; original glyphs retained. Horizontal layout reuses the two extracted pieces."
+}

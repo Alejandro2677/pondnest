@@ -1,0 +1,90 @@
+{
+  "mode": "shopify-preview",
+  "shopify": {
+    "strategy": "native-bundle-product",
+    "enabled": false,
+    "previewEnabled": true,
+    "fulfillmentVerified": false,
+    "checkoutVerified": false
+  },
+  "packs": [
+    {
+      "id": "esencial",
+      "name": "Pack Esencial",
+      "priceCents": 7500,
+      "handles": [
+        "r36s",
+        "estuche-transporte"
+      ],
+      "shopifyProductId": "gid://shopify/Product/11014143639885",
+      "shopifyBundleVariantId": null
+    },
+    {
+      "id": "proteccion-total",
+      "name": "Pack Protección Total",
+      "priceCents": 8000,
+      "featured": true,
+      "handles": [
+        "r36s",
+        "funda-silicona",
+        "estuche-transporte"
+      ],
+      "shopifyProductId": "gid://shopify/Product/11014144229709",
+      "shopifyBundleVariantId": null,
+      "componentVariants": {
+        "funda-silicona": [
+          {
+            "id": "pack-protector-black",
+            "shopifyVariantId": "gid://shopify/ProductVariant/55284261880141",
+            "name": "Negro",
+            "color": "Negro",
+            "image": "/productos/protector-pack/referencia.webp",
+            "referenceImage": true
+          },
+          {
+            "id": "pack-protector-white",
+            "shopifyVariantId": "gid://shopify/ProductVariant/55284262011213",
+            "name": "Blanco",
+            "color": "Blanco",
+            "image": "/productos/protector-pack/referencia.webp",
+            "referenceImage": true
+          },
+          {
+            "id": "pack-protector-purple",
+            "shopifyVariantId": "gid://shopify/ProductVariant/55284261814605",
+            "name": "Morado",
+            "color": "Morado",
+            "image": "/productos/protector-pack/referencia.webp",
+            "referenceImage": true
+          },
+          {
+            "id": "pack-protector-green",
+            "shopifyVariantId": "gid://shopify/ProductVariant/55284261945677",
+            "name": "Verde",
+            "color": "Verde",
+            "image": "/productos/protector-pack/referencia.webp",
+            "referenceImage": true
+          }
+        ]
+      },
+      "componentNote": "La funda de este pack es una referencia distinta de la funda individual y de la incluida en Colección Completa. La fotografía es de referencia general; Shopify no facilita una foto distinta para cada color."
+    },
+    {
+      "id": "coleccion-completa",
+      "name": "Pack Colección Completa",
+      "priceCents": 15000,
+      "handles": [
+        "r36s",
+        "r36h",
+        "funda-silicona",
+        "estuche-transporte"
+      ],
+      "shopifyProductId": "gid://shopify/Product/11014144852301",
+      "linkedColors": [
+        "r36h",
+        "funda-silicona"
+      ],
+      "shopifyBundleVariantId": null
+    }
+  ]
+}

@@ -1,157 +1,73 @@
-﻿import test from "node:test";
-import assert from "node:assert/strict";
-import { createCommerce } from "../../src/services/commerce.js";
-const env = {
-  VITE_SHOPIFY_STORE_DOMAIN: "pondnest-test.myshopify.com",
-  VITE_SHOPIFY_STOREFRONT_TOKEN: "public-test-only",
-  VITE_SHOPIFY_API_VERSION: "2026-10",
-};
-const p = {
-  handle: "r36h",
-  title: "R36H live",
-  description: "Real catalog",
-  productType: "Consola",
-  images: { nodes: [{ url: "https://example.com/product.webp" }] },
-  variants: {
-    nodes: [
-      {
-        id: "gid://shopify/ProductVariant/1",
-        title: "Real variant",
-        availableForSale: false,
-        price: { amount: "75.50", currencyCode: "EUR" },
-      },
-    ],
-    pageInfo: { hasNextPage: false },
-  },
-};
-const cart = {
-  id: "gid://shopify/Cart/1?key=test",
-  checkoutUrl: "https://pondnest-test.myshopify.com/checkouts/test",
-  cost: { subtotalAmount: { amount: "151.00", currencyCode: "EUR" } },
-  lines: {
-    nodes: [
-      {
-        id: "line-1",
-        quantity: 2,
-        merchandise: {
-          id: p.variants.nodes[0].id,
-          title: "Real variant",
-          availableForSale: true,
-          price: p.variants.nodes[0].price,
-          product: { handle: "r36h", title: p.title, featuredImage: null },
-        },
-        cost: { totalAmount: { amount: "151", currencyCode: "EUR" } },
-      },
-    ],
-  },
-};
-function mock(resolver) {
-  const calls = [];
-  const service = createCommerce(env, async (url, options) => {
-    const body = JSON.parse(options.body);
-    calls.push({ url, options, ...body });
-    return { ok: true, json: async () => ({ data: resolver(body) }) };
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import http from 'node:http';
+import configuration from '../../config/product-variants.json' with { type: 'json' };
+import { createCommerce, cartSnapshot, checkoutAddress } from '../../src/services/commerce.js';
+import { createCommerce as shopify } from '../../server/shopify.js';
+import { mapCatalog, localizeCart } from '../../server/catalog.js';
+import { commerceHandler } from '../../server/api.js';
+const env = { SHOPIFY_STORE_DOMAIN: 'fixture.myshopify.com', SHOPIFY_STOREFRONT_PRIVATE_TOKEN: 'private-fixture', SHOPIFY_API_VERSION: '2026-10' };
+const price = { amount: '12.50', currencyCode: 'EUR' };
+const gid = n => `gid://shopify/ProductVariant/${n}`;
+
+test('all 24 options fail closed without a verified remote catalog; local content is preserved', () => {
+  const products = mapCatalog([]);
+  assert.equal(products.length, 4);
+  assert.equal(products.flatMap(p => p.variants).length, 24);
+  assert.ok(products.every(p => p.image && p.description && p.variants.every(v => !v.available && !v.mapped)));
+});
+
+test('server authenticates privately and cart unit price comes from cart cost', async () => {
+  let headers;
+  const service = shopify(env, async (_, options) => {
+    headers = options.headers;
+    return { ok: true, json: async () => ({ data: { cart: { id: 'gid://shopify/Cart/test', checkoutUrl: 'https://fixture.myshopify.com/checkouts/test', cost: { subtotalAmount: price }, lines: { nodes: [{ id: 'l', quantity: 1, cost: { amountPerQuantity: price, totalAmount: price }, merchandise: { id: gid(1), title: 'Variant', availableForSale: true, price: { ...price, amount: '999' }, product: { handle: 'x', title: 'X' } } }] } } } }) };
   });
-  return { service, calls };
-}
-test("demo has four products and checkout is blocked", async () => {
-  const service = createCommerce({});
-  assert.equal((await service.getProducts()).length, 4);
-  assert.equal((await service.getProduct("r36h")).price, null);
-  await assert.rejects(service.getCheckoutUrl("x"), /modo demo/);
+  assert.deepEqual((await service.getCart('gid://shopify/Cart/test')).lines[0].price, price);
+  assert.equal(headers['Shopify-Storefront-Private-Token'], env.SHOPIFY_STOREFRONT_PRIVATE_TOKEN);
+  assert.equal(headers['X-Shopify-Storefront-Access-Token'], undefined);
 });
-test("incomplete live config fails closed", async () => {
-  const service = createCommerce({
-    VITE_SHOPIFY_STORE_DOMAIN: env.VITE_SHOPIFY_STORE_DOMAIN,
-  });
-  assert.equal(service.demo, false);
-  await assert.rejects(service.getProducts(), /incompleta/);
-});
-test("catalog comes entirely from Shopify with Spain context", async () => {
-  const { service, calls } = mock(() => ({
-    products: { nodes: [p], pageInfo: { hasNextPage: false } },
-  }));
-  const products = await service.getProducts();
-  assert.equal(products.length, 1);
-  assert.equal(products[0].name, p.title);
-  assert.equal(products[0].variants[0].available, false);
-  assert.equal(products[0].price.amount, "75.50");
-  assert.match(calls[0].query, /country:ES/);
-  assert.equal(
-    calls[0].url,
-    "https://pondnest-test.myshopify.com/api/2026-10/graphql.json",
-  );
-  assert.equal(
-    calls[0].options.headers["X-Shopify-Storefront-Access-Token"],
-    "public-test-only",
-  );
-});
-test("catalog paginates", async () => {
-  const { service, calls } = mock(({ variables }) => ({
-    products: {
-      nodes: [p],
-      pageInfo: { hasNextPage: !variables.after, endCursor: "next" },
-    },
-  }));
-  assert.equal((await service.getProducts()).length, 2);
-  assert.equal(calls[1].variables.after, "next");
-});
-test("cart create add update remove and checkout use Cart API", async () => {
-  const { service, calls } = mock(({ query }) => {
-    const name = [
-      "cartCreate",
-      "cartLinesAdd",
-      "cartLinesUpdate",
-      "cartLinesRemove",
-    ].find((n) => query.includes(n));
-    return name ? { [name]: { cart, userErrors: [], warnings: [] } } : { cart };
-  });
-  assert.equal((await service.createCart()).id, cart.id);
-  assert.equal(
-    (await service.addToCart(cart.id, "variant-1", 2)).lines[0].quantity,
-    2,
-  );
-  await service.updateCart(cart.id, "line-1", 3);
-  await service.updateCart(cart.id, "line-1", 0);
-  assert.equal(await service.getCheckoutUrl(cart.id), cart.checkoutUrl);
-  assert.equal(calls[0].variables.input.buyerIdentity.countryCode, "ES");
-  assert.deepEqual(calls[1].variables.lines, [
-    { merchandiseId: "variant-1", quantity: 2 },
-  ]);
-  assert.deepEqual(calls[2].variables.lines, [{ id: "line-1", quantity: 3 }]);
-  assert.deepEqual(calls[3].variables.lineIds, ["line-1"]);
-});
-test("API user errors and network errors propagate", async () => {
-  const { service } = mock(() => ({
-    cartLinesAdd: {
-      cart: null,
-      userErrors: [{ message: "Stock unavailable" }],
-    },
-  }));
-  await assert.rejects(service.addToCart("c", "v", 1), /Stock unavailable/);
-  const offline = createCommerce(env, async () => {
-    throw Error("offline");
-  });
-  await assert.rejects(offline.getProducts(), /conectar/);
-});
-test("expired and empty carts cannot checkout", async () => {
-  const { service } = mock(() => ({ cart: null }));
-  assert.equal(await service.getCart("expired"), null);
-  await assert.rejects(service.getCheckoutUrl("expired"), /caducado/);
-});
-test("warnings returned to buyer, invalid checkout refused", async () => {
-  const { service } = mock(() => ({
-    cartLinesUpdate: {
-      cart,
-      userErrors: [],
-      warnings: [{ message: "Quantity adjusted" }],
-    },
-  }));
-  assert.deepEqual((await service.updateCart(cart.id, "line-1", 1)).warnings, [
-    "Quantity adjusted",
-  ]);
-  const { service: insecure } = mock(() => ({
-    cart: { ...cart, checkoutUrl: "http://example.com" },
-  }));
-  await assert.rejects(insecure.getCheckoutUrl(cart.id), /no válida/);
+
+test('HTTP API exercises one variant of every product and a mixed Shopify cart by exact GID', async () => {
+  const originals = Object.values(configuration.products).map(p => p.variants[0].shopifyVariantId);
+  const entries = Object.entries(configuration.products);
+  entries.forEach(([,p],i) => { p.variants[0].shopifyVariantId = gid(i + 1); });
+  const remote = entries.map(([handle,p],i) => ({ handle, title: 'REMOTE NAME', description: 'REMOTE TEXT', productType: '', images: { nodes: [] }, variants: { nodes: [{ id: gid(i+1), title: 'REMOTE OPTION', availableForSale: true, price }], pageInfo: {} } }));
+  let lines = [];
+  const id = 'gid://shopify/Cart/fixture?key=fixture';
+  const cart = () => ({ id, checkoutUrl: 'https://fixture.myshopify.com/checkouts/fixture', cost: { subtotalAmount: { ...price, amount: String(lines.reduce((n,l) => n+l.quantity*12.5,0)) } }, lines: { nodes: lines.map(l => ({ id: l.merchandiseId, quantity: l.quantity, cost: { amountPerQuantity: price, totalAmount: { ...price, amount: String(l.quantity*12.5) } }, merchandise: { id: l.merchandiseId, title: 'REMOTE OPTION', availableForSale: true, price, product: { handle: 'remote-handle', title: 'REMOTE NAME' } } })) } });
+  const request = async (_, options) => {
+    const { query, variables } = JSON.parse(options.body);
+    let data;
+    if (query.includes('products(first:')) data = { products: { nodes: remote, pageInfo: {} } };
+    else if (query.includes('cartLinesAdd')) { lines.push(...variables.lines); data = { cartLinesAdd: { cart: cart(), userErrors: [], warnings: [] } }; }
+    else if (query.includes('cartCreate')) data = { cartCreate: { cart: cart(), userErrors: [], warnings: [] } };
+    else data = { cart: cart() };
+    return { ok: true, json: async () => ({ data }) };
+  };
+  const server = http.createServer(commerceHandler(env, request));
+  await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
+  try {
+    const service = createCommerce({}, (url, opts) => fetch(`http://127.0.0.1:${server.address().port}${url}`, opts));
+    const products = await service.getProducts();
+    assert.ok(products.every(p => p.name !== 'REMOTE NAME' && p.variants[0].mapped));
+    assert.equal((await service.createCart()).id, id);
+    for (let i=0;i<4;i++) await service.addToCart(id, gid(i+1), i+1);
+    const result = await service.getCart(id);
+    assert.deepEqual(result.lines.map(l => [l.variantId,l.quantity]), [1,2,3,4].map(n => [gid(n),n]));
+    assert.equal(result.subtotal.amount, '125');
+    assert.ok(result.lines.every(l => l.mapped && l.image && l.name !== 'REMOTE NAME' && l.price.amount === '12.50'));
+    assert.equal(result.checkoutUrl, null);
+    assert.equal(result.summary.checkoutConnected, false);
+    assert.throws(() => checkoutAddress(result), /desactivados/);
+    assert.notEqual(cartSnapshot(result), cartSnapshot({ ...result, subtotal: { ...price, amount: '200' } }));
+    await assert.rejects(service.addToCart(id, gid(9999), 1), /vínculo/);
+    await assert.rejects(service.addToCart(id, gid(1), 0), /Cantidad/);
+    assert.throws(() => checkoutAddress({ ...result, checkoutBlockedReason:undefined, lines: [{ ...result.lines[0], mapped: false }] }), /Revisa/);
+    const unknown = localizeCart({ ...result, lines: [{ ...result.lines[0], variantId: gid(999) }] }, products);
+    assert.equal(unknown.lines[0].available, false);
+  } finally {
+    await new Promise(resolve => server.close(resolve));
+    entries.forEach(([,p],i) => { p.variants[0].shopifyVariantId = originals[i]; });
+  }
 });

@@ -1,0 +1,74 @@
+.r36s-product-page .detail-copy h1 { font-size: clamp(32px, 3.5vw, 52px); line-height: 1.12; }
+.r36s-product-page .r36s-subtitle { color: #e0d0eb; font-size: 18px; }
+.r36s-reference { color: #d0b4e5 !important; font-size: 13px !important; }
+.r36s-product-page .detail-copy .supplier-rating { padding: 18px 22px; margin: 18px 0; }
+.r36s-product-page .detail-copy .supplier-rating-score > strong { font-size: 34px; }
+.r36s-product-page .detail-copy .supplier-rating > small { display: none; }
+.r36s-details { margin-top: 60px; color: #beb2c8; }
+.r36s-product-page #r36s-purchase, .r36s-details [id], .r36s-accessories { scroll-margin-top: 140px; }
+.r36s-section { border-top: 1px solid #342b40; padding: 46px 0; }
+.section .r36s-details h2, .section .r36s-accessories > h2 { color: #f2eaf7; font-size: clamp(27px, 3vw, 40px); line-height: 1.2; margin: 16px 0 20px; }
+.r36s-details h3 { color: #f0e6f5; font-size: 17px; line-height: 1.5; }
+.r36s-details p { font-size: 14px; line-height: 1.85; }
+.r36s-section-nav { display: flex; flex-wrap: wrap; gap: 8px 24px; padding-bottom: 28px; }
+.r36s-section-nav a { padding: 12px 0; font-size: 13px; color: #d6bce8; }
+.r36s-feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; margin-top: 28px; }
+.r36s-feature { padding: 24px; border: 1px solid #3b2e47; border-radius: 13px; background: #18151e; transition: border-color .2s; }
+.r36s-feature:hover { border-color: #9070a5; }
+.r36s-feature svg { width: 34px; height: 34px; color: #c8a3e0; margin-bottom: 18px; }
+.r36s-feature h3 { margin: 0 0 14px; }
+.r36s-feature p { margin: 0; }
+.r36s-controls-layout { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 30px; align-items: start; margin-top: 28px; }
+.r36s-control-photo { position: relative; border-radius: 13px; overflow: hidden; background: #18151e; }
+.r36s-control-photo img { display: block; width: 100%; height: auto; }
+.r36s-control-point { position: absolute; transform: translate(-50%, -50%); width: 44px; height: 44px; border-radius: 50%; border: 2px solid #efdcff; background: #54346ee8 !important; color: #fff; font-weight: 700; cursor: pointer; box-shadow: 0 0 0 4px #0003; }
+.r36s-control-point[aria-pressed="true"] { background: #f0dafa !important; color: #25172e; }
+.r36s-control-names { display: flex; flex-wrap: wrap; gap: 10px; }
+.r36s-control-option { display: flex; align-items: center; gap: 8px; min-height: 44px; padding: 10px 14px; border: 1px solid #5a416d; border-radius: 8px; color: #ddd0e8; font-size: 13px; cursor: pointer; }
+.r36s-control-option[aria-pressed="true"] { border-color: #d7b1f0; background: #33243e !important; }
+.r36s-point-dot { width: 7px; height: 7px; border-radius: 50%; background: #cba3e6; }
+.r36s-control-explanation, .r36s-library-status { margin: 20px 0; padding: 20px 24px; border: 1px solid #4e385f; border-radius: 12px; background: #19151f; }
+.r36s-control-explanation h3 { margin: 0 0 12px; }
+.r36s-control-explanation { min-height: 160px; }
+.r36s-details .r36s-small-note { font-size: 12px; color: #aa98b8; }
+.r36s-game-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; margin: 28px 0; }
+.r36s-game-grid figure { margin: 0; min-width: 0; }
+.r36s-game-grid img { display: block; width: 100%; height: auto; aspect-ratio: 1; object-fit: contain; border-radius: 12px; background: #19151f; }
+.r36s-game-grid figcaption { font-size: 13px; line-height: 1.6; padding: 12px 0; }
+.r36s-game-grid figcaption strong, .r36s-game-grid figcaption span { display: block; }
+.r36s-game-grid figcaption strong { color: #eee1f5; }
+.r36s-game-grid figcaption span { color: #ad97bd; font-size: 11px; margin-top: 5px; }
+.r36s-library-status ul { padding-left: 20px; font-size: 14px; line-height: 1.8; }
+.r36s-specifications, .r36s-faq-list details { border: 1px solid #483354; border-radius: 12px; background: #18151e; }
+.r36s-specifications summary, .r36s-faq-list summary { display: flex; align-items: center; gap: 16px; min-height: 56px; padding: 20px; color: #f0e5f7; font-size: 15px; cursor: pointer; list-style: none; }
+.r36s-specifications summary::-webkit-details-marker, .r36s-faq-list summary::-webkit-details-marker { display: none; }
+.r36s-specifications summary span, .r36s-faq-list summary span { margin-left: auto; color: #d8b3ef; transition: transform .18s; }
+.r36s-specifications[open] summary span, .r36s-faq-list details[open] summary span { transform: rotate(45deg); }
+.r36s-specifications > div { padding: 0 24px 20px; }
+.r36s-specifications dl { margin: 22px 0; }
+.r36s-specifications dl > div { display: grid; grid-template-columns: 1fr 1.2fr; gap: 15px; border-top: 1px solid #342b40; padding: 14px 0; font-size: 14px; line-height: 1.7; }
+.r36s-specifications dd { margin: 0; color: #f2e7f8; }
+.r36s-specifications dd small { display: block; color: #b89acb; font-size: 11px; }
+.r36s-guide { display: flex; align-items: center; justify-content: space-between; gap: 30px; border: 1px solid #563e66; border-radius: 14px; background: #1c1623; padding: 28px; margin: 28px 0 46px; }
+.r36s-guide .button { flex-shrink: 0; }
+.r36s-product-page .r36s-reviews .section { padding: 36px 0; }
+.r36s-product-page .r36s-reviews .supplier-rating { max-width: none; }
+.r36s-faq-list { display: grid; gap: 10px; }
+.r36s-faq-list details p { padding: 0 20px 20px; margin: 0; }
+.r36s-purchase-bar { position: sticky; z-index: 15; bottom: 12px; display: flex; align-items: center; justify-content: space-between; gap: 12px; padding: 14px 20px; border: 1px solid #675071; border-radius: 12px; background: #1b1721f5; box-shadow: 0 8px 28px #0008; }
+.r36s-purchase-bar strong, .r36s-purchase-bar span { display: block; }
+.r36s-purchase-bar strong { color: #f1e6f8; font-size: 14px; margin-bottom: 5px; }
+.r36s-purchase-bar span { font-size: 12px; }
+.r36s-purchase-bar .button { white-space: nowrap; padding: 14px 18px; }
+.r36s-accessories { margin-top: 50px; border-top: 1px solid #342b40; padding-top: 32px; }
+@media (max-width: 1000px) { .r36s-feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 760px) {
+  .r36s-controls-layout { grid-template-columns: 1fr; }
+  .r36s-game-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .r36s-guide { flex-direction: column; align-items: start; padding: 22px; }
+  .r36s-purchase-bar { padding: 12px; }
+  .r36s-purchase-bar .button { padding: 12px 10px; font-size: 11px; }
+  .r36s-section { padding: 36px 0; }
+}
+@media (max-width: 480px) { .r36s-feature-grid { grid-template-columns: 1fr; } }
+@media (prefers-reduced-motion: reduce) { .r36s-feature, .r36s-specifications summary span, .r36s-faq-list summary span { transition: none; } }

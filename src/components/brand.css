@@ -1,0 +1,16 @@
+.brand.brand--horizontal, .brand.brand--principal {
+  display: inline-block;
+  flex-shrink: 0;
+  width: 164px;
+  max-width: 100%;
+  line-height: 0;
+}
+.brand .brand-logo {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+.brand.brand--footer { width: 180px; }
+.brand.brand--principal { width: min(220px, 60vw); }
+@media (max-width: 600px) { .brand.brand--header { width: 144px; } }

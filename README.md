@@ -8,7 +8,7 @@ Tecnologías: React 19, Vite 6, React Router, Three.js con React Three Fiber/Dre
 
 ## Ejecutar
 
-Node.js 20.19+ o 22.12+; verificado con Node 24.13.1 y Chrome instalado.
+Node.js 24; verificado con Node 24.13.1 y Chrome instalado.
 
 ```sh
 npm ci
@@ -19,10 +19,10 @@ URL habitual: http://localhost:5173. Para generar y revisar producción:
 
 ```sh
 npm run build
-npm run preview
+npm start
 ```
 
-Servir `dist/` y redirigir rutas SPA a `index.html`, conservando los archivos estáticos. No se ha publicado. El HTML mantiene `noindex, nofollow` mientras sea demo; retirarlo al aprobar el lanzamiento.
+Usar el servidor Node existente para servir `dist/` y `/api/commerce` bajo el mismo origen. Preparación de hosting, variables y comprobaciones: [PUBLICACION.md](PUBLICACION.md). El HTML mantiene `noindex, nofollow` mientras sea demo; retirarlo al aprobar el lanzamiento.
 
 ## Qué incluye
 
@@ -55,17 +55,15 @@ En demo se guardan productos y cantidades, sin importes ficticios. Precio y subt
 
 ## Conectar Shopify
 
-1. Validar SKU, variantes, catálogo y fotografías autorizadas. Publicar productos en el canal Storefront. Handles previstos: `r36s`, `r36h`, `funda-silicona`, `estuche-transporte`. Si cambian, actualizar el CTA de portada y la clasificación de referencias.
-2. Configurar mercado España/EUR, fiscalidad, envíos, dominio y políticas. Las consultas de catálogo usan contexto España/español; los precios en otra moneda se rechazan.
-3. Copiar `.env.example` a `.env.local`. Completar dominio `*.myshopify.com`, token **público de Storefront** y versión soportada. Reiniciar/recompilar. Base implementada: `2026-10`, consultada en documentación oficial el 2 de noviembre de 2026.
-4. Nunca incluir tokens Admin, tokens privados, contraseñas ni secretos en variables `VITE_`: se publican al compilar.
-5. Probar el recorrido con la tienda real antes de abrir ventas. Los errores de conexión/configuración no cambian silenciosamente al catálogo demo.
+La integración usa Storefront privado desde un servidor Node. Configuración en `.env.local` con las variables de `.env.example`: `SHOPIFY_STORE_DOMAIN`, `SHOPIFY_STOREFRONT_PRIVATE_TOKEN` y `SHOPIFY_API_VERSION`. No usar variables VITE_ para credenciales.
 
-El servicio implementa `getProducts`, `getProduct`, `getCart`, `createCart`, `addToCart`, `updateCart` (incluye eliminar) y `getCheckoutUrl`. Pagina productos; admite 100 variantes por ficha y muestra error explícito si hay más. Consulta hasta 250 líneas de carrito. Guarda el ID completo del carrito (incluye clave; no registrarlo ni compartirlo). Gestiona errores GraphQL, de usuario y red, avisos y carritos caducados, con timeout de red de 15 s. Checkout redirige a la URL HTTPS devuelta por Shopify.
+Se conservan el catálogo y las imágenes locales. Los vínculos explícitos por GID están en `config/product-variants.json`; las referencias sin verificar no permiten compra. `npm run shopify:audit` consulta el catálogo real y genera `SHOPIFY_AUDIT.json`.
 
-**AutoDS se conecta a Shopify, no al frontend.** No se ha accedido a AutoDS ni a una tienda Shopify real. Las páginas informativas deben completarse antes de activar ventas públicas.
+`Pagar` abre `/resumen-pedido`. `Continuar al pago` revisa cambios y navega al `checkoutUrl` del mismo carrito. Precios unitarios, subtotales y moneda proceden del carrito Shopify. AutoDS no se integra en el frontend.
 
-Documentación oficial: [productos](https://shopify.dev/docs/api/storefront/latest/queries/products), [crear carrito](https://shopify.dev/docs/api/storefront/latest/mutations/cartCreate), [actualizar líneas](https://shopify.dev/docs/api/storefront/latest/mutations/cartLinesUpdate), [versionado](https://shopify.dev/docs/api/usage/versioning).
+Desarrollo: `npm run dev`. Producción: `npm run build` y `npm start`. GitHub Pages necesita una API externa bajo el mismo origen mediante proxy o sustituirse por alojamiento Node.
+
+Estado real, referencias pendientes y pruebas: [SHOPIFY_INTEGRACION.md](SHOPIFY_INTEGRACION.md).
 
 ## Comprobaciones
 

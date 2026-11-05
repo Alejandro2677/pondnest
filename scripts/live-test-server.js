@@ -13,9 +13,9 @@ const server = spawn(
     stdio: "inherit",
     env: {
       ...process.env,
-      VITE_SHOPIFY_STORE_DOMAIN: "pondnest-test.myshopify.com",
-      VITE_SHOPIFY_STOREFRONT_TOKEN: "public-test-fixture",
-      VITE_SHOPIFY_API_VERSION: "2026-10",
+      SHOPIFY_STORE_DOMAIN: "pondnest-test.myshopify.com",
+      SHOPIFY_STOREFRONT_PRIVATE_TOKEN: "",
+      SHOPIFY_API_VERSION: "2026-10",
     },
   },
 );

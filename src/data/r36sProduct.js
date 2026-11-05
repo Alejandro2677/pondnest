@@ -1,0 +1,42 @@
+export const r36sProduct = {
+  title: 'R36S Retro · Consola portátil',
+  subtitle: 'Redescubre los videojuegos clásicos donde quieras.',
+  highlights: [
+    { icon: 'screen', title: 'Pantalla de 3,5 pulgadas', text: 'Consola portátil con pantalla integrada. Tamaño anunciado por el proveedor.' },
+    { icon: 'storage', title: '128 GB', text: 'Capacidad anunciada de la referencia protagonista ArkOS.' },
+    { icon: 'play', title: 'Juegos retro', text: 'Catálogo incluido en la tarjeta pendiente de verificación.' },
+    { icon: 'save', title: 'Guardar partidas', text: 'Cuando el emulador correspondiente sea compatible.' },
+    { icon: 'system', title: 'Sistema ArkOS', text: 'Opciones de configuración y personalización. Versión exacta pendiente de confirmar.' },
+    { icon: 'controls', title: 'Controles completos', text: 'Cruceta, botones ABXY, dos sticks analógicos y botones de función.' },
+  ],
+  // Only place spatial points on controls unambiguously visible in the local photo.
+  controls: [
+    { id: 'dpad', name: 'Cruceta', x: 20, y: 63, text: 'Control direccional para navegar y jugar. Su respuesta depende del juego y del emulador.' },
+    { id: 'abxy', name: 'Botones ABXY', x: 45, y: 63, text: 'Cuatro botones de acción. La asignación varía según el juego y la configuración.' },
+    { id: 'left-stick', name: 'Stick izquierdo', x: 20, y: 79, text: 'Stick analógico izquierdo visto de frente. Su asignación depende del sistema y del juego.' },
+    { id: 'right-stick', name: 'Stick derecho', x: 46, y: 80, text: 'Stick analógico derecho visto de frente. El uso y la compatibilidad dependen del emulador.' },
+    { id: 'start', name: 'Start', text: 'Botón de función. Puede iniciar o pausar según el juego. Ubicación exacta pendiente de confirmar en una referencia etiquetada.' },
+    { id: 'select', name: 'Select', text: 'Botón de selección cuya función depende del juego o sistema. Ubicación exacta pendiente de confirmar.' },
+    { id: 'fn', name: 'FN', text: 'Botón de función. Su posición, combinaciones y atajos están pendientes de verificar para la versión concreta de ArkOS.' },
+    { id: 'power', name: 'Encendido', text: 'Control de encendido. Posición y procedimiento de apagado pendientes de comprobar; consulta la guía antes de utilizar atajos.' },
+    { id: 'volume', name: 'Volumen', text: 'Controles de sonido. Posición y comportamiento pendientes de comprobar para esta referencia.' },
+  ],
+  specifications: [
+    ['Modelo', 'R36S', 'Referencia del catálogo'],
+    ['Variante principal', '128GB-ARKOS', 'Anunciada por el proveedor'],
+    ['Presentación protagonista', 'Morada transparente', 'Referencia del catálogo'],
+    ['Sistema operativo', 'ArkOS', 'Anunciado; versión exacta pendiente'],
+    ['Capacidad de la referencia principal', '128 GB', 'Anunciada por el proveedor'],
+    ['Pantalla', '3,5 pulgadas', 'Anunciada por el proveedor'],
+    ['Material de la carcasa', 'Plástico', 'Anunciado por el proveedor'],
+  ],
+  faqs: [
+    ['¿Qué referencia presenta PondNest?', 'La referencia protagonista es la R36S 128GB-ARKOS, con carcasa morada transparente. Las otras referencias visuales conservan su configuración pendiente de comprobar con el proveedor.'],
+    ['¿Qué juegos y sistemas incluye?', 'La lista real, el contenido de la tarjeta, las licencias y la compatibilidad están pendientes de verificar. Las portadas mostradas son referencias visuales y no confirman juegos preinstalados.'],
+    ['¿Se pueden guardar las partidas?', 'Cuando el juego y el emulador correspondiente lo permitan. La disponibilidad y el procedimiento dependen del software; consulta nuestra guía de configuración.'],
+    ['¿Qué versión de ArkOS utiliza?', 'El proveedor anuncia ArkOS, pero la compilación exacta y los atajos de esta referencia siguen pendientes de confirmar.'],
+    ['¿La puntuación corresponde a clientes de PondNest?', 'No. El 4,6/5 y las 20 valoraciones proceden de la plataforma del proveedor. No representan compras verificadas en PondNest.'],
+    ['¿Puedo comprarla ya y cuándo se enviará?', 'El precio real y la disponibilidad se mostrarán cuando estén configurados. En modo demostración puedes probar el carrito sin hacer pedidos ni pagos. Los gastos, destinos y plazos de envío están pendientes de confirmar.'],
+    ['¿Qué accesorios son compatibles?', 'El estuche y la funda se presentan como candidatos anunciados para R36S. Su ajuste a la referencia concreta está pendiente de comprobar; no se anuncian packs ni descuentos.'],
+  ],
+};

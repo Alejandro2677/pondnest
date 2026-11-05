@@ -55,3 +55,10 @@ service-account*.json
 storageState*.json
 storage-state*.json
 .auth/
+
+# Local test authorizations and live commerce audit exports
+server/checkout-test-session.json
+SHOPIFY_*AUDIT*.json
+SHOPIFY_*TESTS*.json
+PUBLICATION_AUDIT.json
+config/internal/
